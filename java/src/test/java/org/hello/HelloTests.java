@@ -8,7 +8,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
-class HelloAppTest {
+class HelloTests {
 
   @Test
   void shouldReturnHelloWorld() {
@@ -17,7 +17,7 @@ class HelloAppTest {
   }
 
   @Test
-  void shouldPrint() {
+  void shouldPrintHelloMessage() {
     var messageText = "Hello Test!";
     var message = mock(HelloMessage.class);
     when(message.getText()).thenReturn(messageText);
