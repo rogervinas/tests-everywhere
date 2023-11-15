@@ -1,14 +1,14 @@
-name: Java
+name: Kotlin
 
 on:
   push:
     branches: [ "main" ]
     paths:
-      - java/**
+      - kotlin/**
   pull_request:
     branches: [ "main" ]
     paths:
-      - java/**
+      - kotlin/**
 
 permissions:
   contents: read
@@ -34,12 +34,12 @@ jobs:
         path: |
           ~/.gradle/caches
           ~/.gradle/wrapper
-        key: ${{ runner.os }}-java-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        key: ${{ runner.os }}-kotlin-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
-          ${{ runner.os }}-java        
+          ${{ runner.os }}-kotlin        
 
     - name: Build
       uses: gradle/gradle-build-action@842c587ad8aa4c68eeba24c396e15af4c2e9f30a
       with:
         arguments: build
-        build-root-directory: java
+        build-root-directory: kotlin
