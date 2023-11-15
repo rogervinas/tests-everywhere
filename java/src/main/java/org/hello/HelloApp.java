@@ -11,6 +11,6 @@ public class HelloApp {
   }
 
   public void printHello() {
-    console.println(message.getText());
+    console.print(message.getText());
   }
 }

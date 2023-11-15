@@ -3,6 +3,7 @@ package org.hello;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -10,8 +11,14 @@ import static org.mockito.Mockito.when;
 class HelloAppTest {
 
   @Test
-  void shouldPrintHelloWorld() {
-    var messageText = "Hello World!";
+  void shouldReturnHelloWorld() {
+    var message = new HelloMessage();
+    assertThat(message.getText()).isEqualTo("Hello World!");
+  }
+
+  @Test
+  void shouldPrint() {
+    var messageText = "Hello Test!";
     var message = mock(HelloMessage.class);
     when(message.getText()).thenReturn(messageText);
 
@@ -20,6 +27,6 @@ class HelloAppTest {
     var app = new HelloApp(message, console);
     app.printHello();
 
-    verify(console).println(messageText);
+    verify(console).print(messageText);
   }
 }

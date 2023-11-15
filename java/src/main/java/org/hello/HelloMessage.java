@@ -1,5 +1,7 @@
 package org.hello;
 
-public interface HelloMessage {
-  String getText();
+public class HelloMessage {
+  public String getText() {
+    return "Hello World!";
+  }
 }
