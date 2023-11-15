@@ -10,3 +10,4 @@
 Used:
 * [JUnit5](https://junit.org/junit5/)
 * [Mockito](https://site.mockito.org/)
+* [AssertJ](https://assertj.github.io/doc/)
