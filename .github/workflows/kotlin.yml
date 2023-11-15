@@ -34,9 +34,9 @@ jobs:
         path: |
           ~/.gradle/caches
           ~/.gradle/wrapper
-        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        key: ${{ runner.os }}-kotlin-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
-          ${{ runner.os }}-gradle        
+          ${{ runner.os }}-kotlin        
 
     - name: Build
       uses: gradle/gradle-build-action@842c587ad8aa4c68eeba24c396e15af4c2e9f30a
