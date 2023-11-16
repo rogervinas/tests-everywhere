@@ -50,6 +50,13 @@ JavaScript testing with [Jest](https://jestjs.io/)
 ### Create project from scratch
 * Create project using `npm init`
 * Install [Jest](https://jestjs.io/) using `npm install --save-dev jest`
+* Configure scripts in `package.json`:
+  ```json
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  }
+  ```
 
 ### Run this project
 * Install dependencies running `npm install`
