@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Testing with JavaScript",
   "scripts": {
-    "start": "node index.js",
+    "start": "node Main.js",
     "test": "jest"
   },
   "author": "Roger Viñas",

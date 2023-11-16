@@ -3,6 +3,7 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent.*
 
 plugins {
   kotlin("jvm") version "1.9.20"
+  application
 }
 
 repositories {
@@ -31,4 +32,8 @@ tasks.named<Test>("test") {
     showCauses = true
     showStackTraces = true
   }
+}
+
+application {
+  mainClass.set("org.hello.MainKt")
 }

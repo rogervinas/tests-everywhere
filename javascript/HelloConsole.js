@@ -1,7 +1,7 @@
 class HelloConsole {
-    print(text) {
-        console.log(text);
-    }
+  print(text) {
+    console.log(text);
+  }
 }
 
 module.exports = HelloConsole

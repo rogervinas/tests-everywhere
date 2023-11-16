@@ -69,7 +69,7 @@ JavaScript testing with [Jest](https://jestjs.io/)
 * Configure scripts in `package.json`:
   ```json
   "scripts": {
-    "start": "node index.js",
+    "start": "node Main.js",
     "test": "jest"
   }
   ```

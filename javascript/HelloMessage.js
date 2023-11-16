@@ -1,5 +1,5 @@
 class HelloMessage {
-    text = "Hello World!";
+  text = "Hello World!";
 }
 
 module.exports = HelloMessage
