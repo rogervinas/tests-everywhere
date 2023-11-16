@@ -1,5 +1,7 @@
 package org.hello
 
-interface HelloConsole {
-    fun print(text: String)
+class HelloConsole {
+    fun print(text: String) {
+      println(text)
+    }
 }

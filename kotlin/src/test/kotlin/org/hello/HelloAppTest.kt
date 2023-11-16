@@ -8,14 +8,7 @@ import io.mockk.just
 import io.mockk.mockk
 import io.mockk.verify
 
-class HelloTests : DescribeSpec({
-
-  describe("HelloMessage") {
-    it("should return hello world") {
-      val message = HelloMessage()
-      message.text shouldBe "Hello World!"
-    }
-  }
+class HelloAppTest : DescribeSpec({
 
   describe("HelloApp") {
     it("should print hello message") {

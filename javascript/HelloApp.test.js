@@ -6,21 +6,21 @@ jest.mock('./HelloMessage');
 jest.mock('./HelloConsole');
 
 describe('HelloApp', () => {
-    it("should print hello message", () => {
-        const helloMessageText = "Hello Test!";
-        HelloMessage.mockImplementation(() => {
-            return {
-                text: helloMessageText
-            }
-        });
-        const helloMessage = new HelloMessage();
+  it("should print hello message", () => {
+    const messageText = "Hello Test!";
+    HelloMessage.mockImplementation(() => {
+      return {
+        text: messageText
+      }
+    });
+    const message = new HelloMessage();
 
-        const helloConsole = new HelloConsole();
+    const console = new HelloConsole();
 
-        const helloApp = new HelloApp(helloMessage, helloConsole);
-        helloApp.printHello();
+    const app = new HelloApp(message, console);
+    app.printHello();
 
-        expect(helloConsole.print).toHaveBeenCalledTimes(1);
-        expect(helloConsole.print).toHaveBeenCalledWith(helloMessageText);
-    })
+    expect(console.print).toHaveBeenCalledTimes(1);
+    expect(console.print).toHaveBeenCalledWith(messageText);
+  })
 });
