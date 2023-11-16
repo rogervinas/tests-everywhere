@@ -1,0 +1,17 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "Testing with JavaScript",
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "author": "Roger Viñas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
