@@ -2,6 +2,10 @@
 
 ![Meme](.files/meme.jpg)
 
+* [Java](#java)
+* [Kotlin](#kotlin)
+* [JavaScript](#javascript)
+
 ## Java
 
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/java.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/java.yml)
