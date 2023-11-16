@@ -21,7 +21,7 @@ Java testing with [JUnit5](https://junit.org/junit5/), [Mockito](https://site.mo
 
 ### Create project from scratch
 * Create project using `gradle init --type java-application --dsl kotlin --test-framework junit-jupiter`
-* Add [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/) dependencies in `build.gradle.kts`:
+* Add [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/) dependencies in [build.gradle.kts](java/build.gradle.kts):
   * `testImplementation("org.mockito:mockito-core:x.x.x")`
   * `testImplementation("org.assertj:assertj-core:x.x.x")`
 
@@ -46,7 +46,7 @@ Kotlin testing with [Kotest](https://kotest.io) and [MockK](https://mockk.io/)
 
 ### Create project from scratch
 * Create project using `gradle init --type kotlin-application --dsl kotlin --test-framework kotlintest`
-* Add [Kotest](https://kotest.io) and [MockK](https://mockk.io/) dependencies in `build.gradle.kts`:
+* Add [Kotest](https://kotest.io) and [MockK](https://mockk.io/) dependencies in [build.gradle.kts](kotlin/build.gradle.kts):
   * `testImplementation("io.kotest:kotest-runner-junit5:x.x.x")`
   * `testImplementation("io.mockk:mockk:x.x.x")`
 
@@ -70,7 +70,7 @@ JavaScript testing with [Jest](https://jestjs.io/)
 ### Create project from scratch
 * Create project using `npm init`
 * Install [Jest](https://jestjs.io/) using `npm install --save-dev jest`
-* Configure scripts in `package.json`:
+* Configure scripts in [package.json](javascript/package.json):
   ```json
   "scripts": {
     "start": "node Main.js",
