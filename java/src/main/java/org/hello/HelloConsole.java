@@ -1,5 +1,7 @@
 package org.hello;
 
-public interface HelloConsole {
-  void print(String text);
+public class HelloConsole {
+  public void print(String text) {
+    System.out.println(text);
+  }
 }
