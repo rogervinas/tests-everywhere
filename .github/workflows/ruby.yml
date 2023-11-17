@@ -31,9 +31,7 @@ jobs:
       with:
         ruby-version: '3'
         bundler-cache: true
-
-    - name: Install
-      run: bundle install
+        working-directory: ruby
 
     - name: Test
       run: rspec -fd
