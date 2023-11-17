@@ -3,4 +3,4 @@ docker run -it --rm \
   --volume $PWD:/project \
   --workdir /project \
   --entrypoint "/usr/bin/bash" \
-  node:18 \
+  node:18
