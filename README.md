@@ -85,7 +85,7 @@
 * Go to [kotlin](kotlin) folder
 * Execute `./docker-run.sh`
 * Once inside the container:
-  * Only first time, install dependencies with `npm install` 
+  * First time only, install dependencies with `npm install` 
   * Test with `npm test`
   * Run with `npm start`
 
@@ -98,7 +98,7 @@
 
 #### Run locally
 * Go to [javascript](javascript) folder
-* Only first time, install dependencies with `npm install`
+* First time only, install dependencies with `npm install`
 * Test with `npm test`
 * Run with `npm start`
 
@@ -124,5 +124,5 @@
 * Go to [ruby](ruby) folder
 * Execute `./docker-run.sh`
 * Once inside the container:
-  * Only first time, install dependencies with `bundle install`
+  * First time only, install dependencies with `bundle install`
   * Test with `rspec -fd`
