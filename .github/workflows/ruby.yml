@@ -1,0 +1,37 @@
+name: Ruby
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - ruby/**
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - ruby/**
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ruby
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure Ruby
+      uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf
+      with:
+        ruby-version: '3'
+        bundler-cache: true
+        working-directory: ruby
+
+    - name: Test
+      run: bundle exec rspec -fd

@@ -2,16 +2,17 @@
 
 ![Meme](.files/meme.jpg)
 
-* [Java](#java)
-* [Kotlin](#kotlin)
-* [JavaScript](#javascript)
+1) [Java](#java)
+2) [Kotlin](#kotlin)
+3) [JavaScript](#javascript)
+4) [Ruby](#ruby)
 
 ## Java
 
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/java.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/java.yml)
 ![Java](https://img.shields.io/badge/Java-21-blue?labelColor=black)
 
-Java testing with [JUnit5](https://junit.org/junit5/), [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/)
+**Java** testing with [JUnit5](https://junit.org/junit5/), [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/)
 
 ### Run this project using 🐳 [docker](https://www.docker.com/)
 * Go to [java](java) folder
@@ -45,7 +46,7 @@ Java testing with [JUnit5](https://junit.org/junit5/), [Mockito](https://site.mo
 ![Java](https://img.shields.io/badge/Java-21-blue?labelColor=black)
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue?labelColor=black)
 
-Kotlin testing with [Kotest](https://kotest.io) and [MockK](https://mockk.io/)
+**Kotlin** testing with [Kotest](https://kotest.io) and [MockK](https://mockk.io/)
 
 ### Run this project using 🐳 [docker](https://www.docker.com/)
 * Go to [kotlin](kotlin) folder
@@ -78,7 +79,7 @@ Kotlin testing with [Kotest](https://kotest.io) and [MockK](https://mockk.io/)
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/javascript.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/javascript.yml)
 ![Node](https://img.shields.io/badge/Node-18.x-blue?labelColor=black)
 
-JavaScript testing with [Jest](https://jestjs.io/)
+**JavaScript** testing with [Jest](https://jestjs.io/)
 
 ### Run this project using 🐳 [docker](https://www.docker.com/)
 * Go to [kotlin](kotlin) folder
@@ -111,3 +112,17 @@ JavaScript testing with [Jest](https://jestjs.io/)
     "test": "jest"
   }
   ```
+
+## Ruby
+
+[![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/ruby.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/ruby.yml)
+![Ruby](https://img.shields.io/badge/Ruby-3.x-blue?labelColor=black)
+
+**Ruby** testing with [RSpec](https://rspec.info/)
+
+### Run this project using 🐳 [docker](https://www.docker.com/)
+* Go to [ruby](ruby) folder
+* Execute `./docker-run.sh`
+* Once inside the container:
+  * Only first time, install dependencies with `bundle install`
+  * Test with `rspec -fd`
