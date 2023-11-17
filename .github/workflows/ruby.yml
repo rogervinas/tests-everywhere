@@ -34,4 +34,4 @@ jobs:
         working-directory: ruby
 
     - name: Test
-      run: rspec -fd
+      run: bundle exec rspec -fd
