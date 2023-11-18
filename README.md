@@ -13,7 +13,7 @@
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/java.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/java.yml)
 ![Java](https://img.shields.io/badge/Java-21-blue?labelColor=black)
 
-**Java** testing with [JUnit5](https://junit.org/junit5/), [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/)
+[Java](https://openjdk.org/) testing with [JUnit5](https://junit.org/junit5/), [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/)
 
 ### Run this project using 🐳 [docker](https://www.docker.com/)
 * Go to [java](java) folder
@@ -48,7 +48,7 @@
 ![Java](https://img.shields.io/badge/Java-21-blue?labelColor=black)
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9.20-blue?labelColor=black)
 
-**Kotlin** testing with [Kotest](https://kotest.io) and [MockK](https://mockk.io/)
+[Kotlin](https://kotlinlang.org/) testing with [Kotest](https://kotest.io) and [MockK](https://mockk.io/)
 
 ### Run this project using 🐳 [docker](https://www.docker.com/)
 * Go to [kotlin](kotlin) folder
@@ -82,10 +82,10 @@
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/javascript.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/javascript.yml)
 ![Node](https://img.shields.io/badge/Node-18.x-blue?labelColor=black)
 
-**JavaScript** testing with [Jest](https://jestjs.io/)
+[JavaScript](https://developer.mozilla.org/docs/Web/JavaScript) testing with [Jest](https://jestjs.io/)
 
 ### Run this project using 🐳 [docker](https://www.docker.com/)
-* Go to [kotlin](kotlin) folder
+* Go to [javascript](javascript) folder
 * Execute `./docker-run.sh`
 * Once inside the container:
   * First time only, install dependencies with `npm install` 
@@ -122,7 +122,7 @@
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/ruby.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/ruby.yml)
 ![Ruby](https://img.shields.io/badge/Ruby-3.x-blue?labelColor=black)
 
-**Ruby** testing with [RSpec](https://rspec.info/)
+[Ruby](https://www.ruby-lang.org) testing with [RSpec](https://rspec.info/)
 
 ### Run this project using 🐳 [docker](https://www.docker.com/)
 * Go to [ruby](ruby) folder
@@ -155,7 +155,7 @@
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/go.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/go.yml)
 ![Go](https://img.shields.io/badge/Go-1.x-blue?labelColor=black)
 
-**Go** testing
+[Go](https://go.dev/) testing
 
 ### Run this project using 🐳 [docker](https://www.docker.com/)
 * Go to [go](go) folder
@@ -163,6 +163,11 @@
 * Once inside the container:
   * Test with `go test -test.v`
   * Run with `go run .`
+
+### Run this project locally
+
+#### Pre-requisites
+* Install [Go](https://go.dev/dl/)
 
 #### Run locally
 * Go to [go](go) folder
