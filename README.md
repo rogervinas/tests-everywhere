@@ -126,3 +126,4 @@
 * Once inside the container:
   * First time only, install dependencies with `bundle install`
   * Test with `rspec -fd`
+  * Run with `ruby lib/Main.rb`
