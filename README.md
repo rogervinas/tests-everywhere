@@ -153,7 +153,7 @@
 ## Go
 
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/go.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/go.yml)
-![Go](https://img.shields.io/badge/Go-1.x-blue?labelColor=black)
+![Go](https://img.shields.io/badge/Go-1.21.4-blue?labelColor=black)
 
 [Go](https://go.dev/) testing
 
