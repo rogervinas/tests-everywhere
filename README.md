@@ -6,6 +6,7 @@
 2) [Kotlin](#kotlin)
 3) [JavaScript](#javascript)
 4) [Ruby](#ruby)
+4) [Go](#go)
 
 ## Java
 
@@ -148,3 +149,25 @@
 #### Create project from scratch
 * Just create a [Gemfile](ruby/Gemfile)
 * Execute `bundle install`
+
+## Go
+
+[![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/go.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/go.yml)
+![Go](https://img.shields.io/badge/Go-1.x-blue?labelColor=black)
+
+**Go** testing
+
+### Run this project using 🐳 [docker](https://www.docker.com/)
+* Go to [go](go) folder
+* Execute `./docker-run.sh`
+* Once inside the container:
+  * Test with `go test -test.v`
+  * Run with `go run .`
+
+#### Run locally
+* Go to [go](go) folder
+* Test with `go test -test.v`
+* Run with `go run .`
+
+#### Create project from scratch
+* Execute `go mod init org.hello/main`
