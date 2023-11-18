@@ -26,8 +26,9 @@
 #### Pre-requisites
 * Install [Java](https://openjdk.org/) and [Gradle](https://gradle.org/) manually or ...
   * Install [SdkMan](https://sdkman.io/) and ...
-    * Install **Java** using `sdk install java 21-tem` (use `sdk list java` to see all versions)
-    * Install **Gradle** using `sdk install grade 8.4` (use `sdk list gradle` to see all versions)
+    * List available versions executing `sdk list java` and `sdk list gradle`
+    * Install **Java** executing `sdk install java 21-tem`
+    * Install **Gradle** executing `sdk install grade 8.4`
 
 #### Run locally
 * Go to [java](java) folder
@@ -60,8 +61,9 @@
 #### Pre-requisites
 * Install [Java](https://openjdk.org/) and [Gradle](https://gradle.org/) manually or ...
   * Install [SdkMan](https://sdkman.io/) and ...
-    * Install **Java** using `sdk install java 21-tem` (use `sdk list java` to see all versions)
-    * Install **Gradle** using `sdk install grade 8.4` (use `sdk list gradle` to see all versions)
+    * List available versions executing `sdk list java` and `sdk list gradle` 
+    * Install **Java** executing `sdk install java 21-tem`
+    * Install **Gradle** executing `sdk install grade 8.4`
 
 #### Run locally
 * Go to [kotlin](kotlin) folder
@@ -94,6 +96,7 @@
 #### Pre-requisites
 * Install [Node.js](https://nodejs.org/en/) manually or ...
   * Install [Node Version Manager](https://github.com/nvm-sh/nvm) and ...
+    * List available versions executing `nvm list`
     * Install **Node.js** executing `nvm use v18` or `nvm use stable`
 
 #### Run locally
@@ -127,3 +130,21 @@
   * First time only, install dependencies with `bundle install`
   * Test with `rspec -fd`
   * Run with `ruby lib/Main.rb`
+
+### Run this project locally
+
+#### Pre-requisites
+* Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/) manually or ...
+  * Install [renv](https://github.com/rbenv/rbenv#readme) version manager and ..
+    * List available versions executing `rbenv install -l`
+    * Install **Ruby** executing `rbenv install 3.2.2` and `rbenv global 3.2.2`
+
+#### Run locally
+* Go to [ruby](ruby) folder
+* First time only, install dependencies with `bundle install`
+* Test with `rspec -fd`
+* Run with `ruby lib/Main.rb`
+
+#### Create project from scratch
+* Just create a [Gemfile](ruby/Gemfile)
+* Execute `bundle install`
