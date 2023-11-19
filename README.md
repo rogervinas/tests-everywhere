@@ -3,7 +3,16 @@
 ![Meme](.files/meme.jpg)
 
 ```mermaid
+---
+config:
+    diagramMarginX: 20
+    mirrorActors: false
+---
 sequenceDiagram
+  participant Main
+  participant HelloApp as Hello<br>App
+  participant HelloMessage as Hello<br>Message
+  participant HelloConsole as Hello<br>Console
   Main ->> HelloApp: printHello()
   HelloApp ->> HelloMessage: getText()
   HelloMessage -->> HelloApp: "Hello World!"
@@ -11,20 +20,36 @@ sequenceDiagram
 ```
 
 ```mermaid
+---
+config:
+    diagramMarginX: 20
+    mirrorActors: false
+---
 sequenceDiagram
-  HelloMessage Test ->> HelloMessage: getText()
-  HelloMessage -->> HelloMessage Test: "Hello World!"
-  HelloMessage Test ->> HelloMessage Test: Assert Text is "Hello World!"
+  participant Test
+  participant HelloMessage as Hello Message
+  Test ->> HelloMessage: getText()
+  HelloMessage -->> Test: "Hello World!"
+  Test ->> Test: Assert Text is "Hello World!"
 ```
 
 ```mermaid
+---
+config:
+    diagramMarginX: 20
+    mirrorActors: false
+---
 sequenceDiagram
-  HelloApp Test ->> HelloApp Test: Configure mocks
-  HelloApp Test ->> HelloApp: printHello()
-  HelloApp ->> HelloMessage Mock: getText()
-  HelloMessage Mock -->> HelloApp: "Hello Test!"
-  HelloApp ->> HelloConsole Mock: print("Hello Test!")
-  HelloApp Test ->> HelloApp Test: Verify HelloConsole Mock has been called once with "Hello Test!"
+  participant Test
+  participant HelloApp as Hello<br>App
+  participant HelloMessageMock as Hello Message<br>Mock
+  participant HelloConsoleMock as Hello Console<br>Mock  
+  Test ->> Test: Configure mocks
+  Test ->> HelloApp: printHello()
+  HelloApp ->> HelloMessageMock: getText()
+  HelloMessageMock -->> HelloApp: "Hello Test!"
+  HelloApp ->> HelloConsoleMock: print("Hello Test!")
+  Test ->> Test: Verify Hello Console Mock<br>has been called once<br>with "Hello Test!"
 ```
 
 1) [Java](#java)
@@ -32,7 +57,6 @@ sequenceDiagram
 3) [JavaScript](#javascript)
 4) [Ruby](#ruby)
 4) [Go](#go)
-
 
 
 ## Java
