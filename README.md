@@ -2,11 +2,38 @@
 
 ![Meme](.files/meme.jpg)
 
+```mermaid
+sequenceDiagram
+  Main ->> HelloApp: printHello()
+  HelloApp ->> HelloMessage: getText()
+  HelloMessage -->> HelloApp: "Hello World!"
+  HelloApp ->> HelloConsole: print("Hello World!")
+```
+
+```mermaid
+sequenceDiagram
+  HelloMessage Test ->> HelloMessage: getText()
+  HelloMessage -->> HelloMessage Test: "Hello World!"
+  HelloMessage Test ->> HelloMessage Test: Assert Text is "Hello World!"
+```
+
+```mermaid
+sequenceDiagram
+  HelloApp Test ->> HelloApp Test: Configure mocks
+  HelloApp Test ->> HelloApp: printHello()
+  HelloApp ->> HelloMessage Mock: getText()
+  HelloMessage Mock -->> HelloApp: "Hello Test!"
+  HelloApp ->> HelloConsole Mock: print("Hello Test!")
+  HelloApp Test ->> HelloApp Test: Verify HelloConsole Mock has been called once with "Hello Test!"
+```
+
 1) [Java](#java)
 2) [Kotlin](#kotlin)
 3) [JavaScript](#javascript)
 4) [Ruby](#ruby)
 4) [Go](#go)
+
+
 
 ## Java
 
