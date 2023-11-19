@@ -2,11 +2,11 @@
 
 Welcome to the **Hello World!** of **testing** using the most popular programming languages ...
 
-1) [Java](#java)
-2) [Kotlin](#kotlin)
-3) [JavaScript](#javascript)
-4) [Ruby](#ruby)
-4) [Go](#go)
+1) [Java](java)
+2) [Kotlin](kotlin)
+3) [JavaScript](javascript)
+4) [Ruby](ruby)
+4) [Go](go)
 
 In each of them we will implement this simple logic:
 ```mermaid
