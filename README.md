@@ -3,47 +3,48 @@
 ![Meme](.files/meme.jpg)
 
 ```mermaid
+%%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
   participant Main
-  participant HelloApp as Hello<br>App
-  participant HelloMessage as Hello<br>Message
-  participant HelloConsole as Hello<br>Console
-  Main ->> HelloApp: printHello()
+  create participant HelloConsole as Hello<br>Console
+  Main ->> HelloConsole: Create
+  create participant HelloMessage as Hello<br>Message
+  Main ->> HelloMessage: Create
+  create participant HelloApp as Hello<br>App
+  Main ->> HelloApp: Create
+  Main ->>+ HelloApp: printHello()
   HelloApp ->> HelloMessage: getText()
   HelloMessage -->> HelloApp: "Hello World!"
   HelloApp ->> HelloConsole: print("Hello World!")
+  HelloApp -->>- Main: #0032;
 ```
 
 ```mermaid
----
-config:
-    diagramMarginX: 50
-    mirrorActors: false
----
+%%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
   participant Test
-  participant HelloMessage as Hello Message
+  create participant HelloMessage as Hello Message
+  Test ->> HelloMessage: Create
   Test ->> HelloMessage: getText()
   HelloMessage -->> Test: "Hello World!"
   Test ->> Test: Assert Text is "Hello World!"
 ```
 
 ```mermaid
----
-config:
-    diagramMarginX: 50
-    mirrorActors: false
----
+%%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
   participant Test
-  participant HelloApp as Hello<br>App
-  participant HelloMessageMock as Hello Message<br>Mock
-  participant HelloConsoleMock as Hello Console<br>Mock  
-  Test ->> Test: Configure mocks
-  Test ->> HelloApp: printHello()
+  create participant HelloConsoleMock as Hello Console<br>Mock
+  Test ->> HelloConsoleMock: Create
+  create participant HelloMessageMock as Hello Message<br>Mock
+  Test ->> HelloMessageMock: Create
+  create participant HelloApp as Hello<br>App
+  Test ->> HelloApp: Create
+  Test ->>+ HelloApp: printHello()
   HelloApp ->> HelloMessageMock: getText()
   HelloMessageMock -->> HelloApp: "Hello Test!"
   HelloApp ->> HelloConsoleMock: print("Hello Test!")
+  HelloApp -->>- Test: #0032;
   Test ->> Test: Verify Hello Console Mock<br>has been called once<br>with "Hello Test!"
 ```
 
