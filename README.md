@@ -2,9 +2,9 @@
 
 Welcome to the **Hello World!** of **testing** using the most popular programming languages ...
 
-| <img src=".files/java.png" width="32"> | <img src=".files/kotlin.png" width="32"> | <img src=".files/javascript.png" width="32"> | <img src=".files/ruby.png" width="32"> | <img src=".files/go.png" width="32"> |
-|:--------------------------------------:|:----------------------------------------:|:--------------------------------------------:|:--------------------------------------:|--------------------------------------|
-|              [Java](java)              |             [Kotlin](kotlin)             |           [JavaScript](javascript)           |              [Ruby](ruby)              | [Go](go)                             |
+| ![](.files/java.png) | ![](.files/kotlin.png) | ![](.files/javascript.png) | ![](.files/ruby.png) |  ![](.files/go.png)  |
+|:--------------------:|:----------------------:|:--------------------------:|:--------------------:|:--------------------:|
+|     [Java](java)     |    [Kotlin](kotlin)    |  [JavaScript](javascript)  |     [Ruby](ruby)     |       [Go](go)       |
 
 In each of them we will implement this simple logic:
 ```mermaid
