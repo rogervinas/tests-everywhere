@@ -6,11 +6,11 @@
 %%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
   participant Main
-  create participant HelloConsole as Hello<br>Console
-  Main ->> HelloConsole: Create
-  create participant HelloMessage as Hello<br>Message
+  participant HelloApp as Hello<br>App
+  participant HelloMessage as Hello<br>Message
+  participant HelloConsole as Hello<br>Console
   Main ->> HelloMessage: Create
-  create participant HelloApp as Hello<br>App
+  Main ->> HelloConsole: Create
   Main ->> HelloApp: Create
   Main ->>+ HelloApp: printHello()
   HelloApp ->> HelloMessage: getText()
@@ -23,22 +23,22 @@ sequenceDiagram
 %%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
   participant Test
-  create participant HelloMessage as Hello Message
+  participant HelloMessage as Hello<br>Message
   Test ->> HelloMessage: Create
   Test ->> HelloMessage: getText()
   HelloMessage -->> Test: "Hello World!"
-  Test ->> Test: Assert Text is "Hello World!"
+  Test ->> Test: Assert Text<br>is "Hello World!"
 ```
 
 ```mermaid
 %%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
   participant Test
-  create participant HelloConsoleMock as Hello Console<br>Mock
-  Test ->> HelloConsoleMock: Create
-  create participant HelloMessageMock as Hello Message<br>Mock
+  participant HelloApp as Hello<br>App
+  participant HelloMessageMock as Hello Message<br>Mock
+  participant HelloConsoleMock as Hello Console<br>Mock
   Test ->> HelloMessageMock: Create
-  create participant HelloApp as Hello<br>App
+  Test ->> HelloConsoleMock: Create
   Test ->> HelloApp: Create
   Test ->>+ HelloApp: printHello()
   HelloApp ->> HelloMessageMock: getText()
