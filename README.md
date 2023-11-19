@@ -2,11 +2,15 @@
 
 Welcome to the **Hello World!** of **testing** using the most popular programming languages ...
 
-|    <!-- -->          |        <!-- -->              |
-|----------------------|------------------------------|
-|<img src=".files/java.png" width="32">| [Java](java) |
-|<img src=".files/kotlin.png" width="32">|[Kotlin](kotlin)|
-3) 
+<table style="border: transparent"><a href="java">
+<tr><td><img src=".files/java.png" width="32"/></td></tr>
+<tr><td>Java</td></tr>
+</a></table>
+
+|<img src=".files/java.png" width="32">|**[Java](java)**|<img src=".files/javascript.png" width="32">| **[JavaScript](javascript)** |
+|-|-|-|------------------------|
+|<img src=".files/kotlin.png" width="32">|**[Kotlin](kotlin)**|
+
 4) 
 5) [JavaScript](javascript)
 4) [Ruby](ruby)
