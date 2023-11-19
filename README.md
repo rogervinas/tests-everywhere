@@ -3,15 +3,6 @@
 ![Meme](.files/meme.jpg)
 
 ```mermaid
-%%{
-  init: {
-    "sequence": {
-      "diagramMarginX": 50,
-      "diagramMarginY": 50,
-      "mirrorActors": false
-    }
-  }
-}%%
 sequenceDiagram
   participant Main
   participant HelloApp as Hello<br>App
