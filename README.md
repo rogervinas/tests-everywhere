@@ -5,7 +5,7 @@
 ```mermaid
 ---
 config:
-    diagramMarginX: 20
+    diagramMarginX: 30
     mirrorActors: false
 ---
 sequenceDiagram
@@ -22,7 +22,7 @@ sequenceDiagram
 ```mermaid
 ---
 config:
-    diagramMarginX: 20
+    diagramMarginX: 30
     mirrorActors: false
 ---
 sequenceDiagram
@@ -36,7 +36,7 @@ sequenceDiagram
 ```mermaid
 ---
 config:
-    diagramMarginX: 20
+    diagramMarginX: 30
     mirrorActors: false
 ---
 sequenceDiagram
