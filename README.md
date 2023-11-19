@@ -6,7 +6,9 @@
 %%{
   init: {
     "sequence": {
-      "diagramMarginX": 50
+      "diagramMarginX": 50,
+      "diagramMarginY": 50,
+      "mirrorActors": false
     }
   }
 }%%
