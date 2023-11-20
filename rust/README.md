@@ -16,7 +16,7 @@
 ## Run this project locally
 
 ### Pre-requisites
-* Install [Rustup](https://www.rust-lang.org/tools/install) manually or ...
+* Install [Rustup](https://www.rust-lang.org/tools/install) manually and ...
   * List active toolchain installed executing `rustup show`
   * List [Cargo](https://doc.rust-lang.org/cargo/) version installed executing `cargo --version`
 
