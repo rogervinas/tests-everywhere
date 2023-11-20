@@ -7,7 +7,6 @@
 [Scala](https://www.scala-lang.org/) testing with [ScalaTest](https://www.scalatest.org/) and [Mockito](https://www.scalatest.org/plus/mockito)
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
-* Go to [java](java) folder
 * Execute `./docker-run.sh`
 * Once inside the container:
     * Test with `sbt test`
@@ -23,7 +22,6 @@
   * Install [Coursier](https://get-coursier.io/) and execute `cs install scala:3.3.1`
 
 ### Run locally
-* Go to [scala](scala) folder
 * Test with `sbt test`
 * Run with `sbt run`
 

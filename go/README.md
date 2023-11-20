@@ -3,10 +3,9 @@
 
 # Go
 
-[Go](https://go.dev/) testing
+[Go](https://go.dev/) testing with core libraries
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
-* Go to [go](go) folder
 * Execute `./docker-run.sh`
 * Once inside the container:
     * Test with `go test -test.v`
@@ -18,7 +17,6 @@
 * Install [Go](https://go.dev/dl/)
 
 ### Run locally
-* Go to [go](go) folder
 * Test with `go test -test.v`
 * Run with `go run .`
 
