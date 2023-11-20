@@ -1,5 +1,5 @@
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/python.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/python.yml)
-![Python](https://img.shields.io/badge/Python-3.12.0-blue?labelColor=black)
+![Python](https://img.shields.io/badge/Python-3.12-blue?labelColor=black)
 
 # Python
 
@@ -18,7 +18,7 @@
 * Install [Python](https://www.python.org/downloads/) manually or ...
     * Install [pyenv](https://github.com/pyenv/pyenv) version manager and ..
         * List available versions executing `pyenv install -l`
-        * Install **Ruby** executing `pyenv install 3.12.0` and `pyenv global 3.12.0`
+        * Install **Python** executing `pyenv install 3.12` and `pyenv global 3.12`
 
 ### Run locally
 * Test with `python -m unittest discover -v`
