@@ -2,9 +2,9 @@
 
 Welcome to the **Hello World!** of **testing** using the most popular programming languages ...
 
-| [![](.files/java.png)](java) | [![](.files/kotlin.png)](kotlin) | [![](.files/javascript.png)](javascript) | [![](.files/ruby.png)](ruby) | [![](.files/go.png)](go) | [![](.files/scala.png)](scala) |
-|:----------------------------:|:--------------------------------:|:----------------------------------------:|:----------------------------:|:------------------------:|:------------------------------:|
-|         [Java](java)         |         [Kotlin](kotlin)         |         [JavaScript](javascript)         |         [Ruby](ruby)         |         [Go](go)         |         [Scala](scala)         |
+| [![](.files/java.png)](java) | [![](.files/kotlin.png)](kotlin) | [![](.files/javascript.png)](javascript) | [![](.files/ruby.png)](ruby) | [![](.files/go.png)](go) | [![](.files/scala.png)](scala) | [![](.files/python.png)](python) |
+|:----------------------------:|:--------------------------------:|:----------------------------------------:|:----------------------------:|:------------------------:|:------------------------------:|:--------------------------------:|
+|         [Java](java)         |         [Kotlin](kotlin)         |         [JavaScript](javascript)         |         [Ruby](ruby)         |         [Go](go)         |         [Scala](scala)         |         [Python](python)         |
 
 In each of them we will implement this simple logic:
 ```mermaid
