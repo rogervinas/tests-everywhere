@@ -1,0 +1,37 @@
+name: Python
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - .github/workflows/python.yml
+      - python/**
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - .github/workflows/python.yml
+      - python/**
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: python
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.12'
+
+    - name: Test
+      run: python -m unittest discover -v
