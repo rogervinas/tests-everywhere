@@ -27,6 +27,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        submodules: true
 
     - name: Test
       run: ./test/bats/bin/bats test/hello.bats
