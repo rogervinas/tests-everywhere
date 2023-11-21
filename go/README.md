@@ -8,8 +8,9 @@
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 * Execute `./docker-run.sh`
 * Once inside the container:
-    * Test with `go test -test.v`
-    * Run with `go run .`
+  * Test with `go test -test.v`
+  * Run with `go run .`
+  * Build with `go build`
 
 ## Run this project locally
 
@@ -19,6 +20,7 @@
 ### Run locally
 * Test with `go test -test.v`
 * Run with `go run .`
+* Build with `go build`
 
 ### Create project from scratch
 * Execute `go mod init org.hello/main`
