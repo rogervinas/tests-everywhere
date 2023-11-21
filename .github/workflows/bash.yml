@@ -1,0 +1,37 @@
+name: Bash
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - .github/workflows/bash.yml
+      - bash/**
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - .github/workflows/bash.yml
+      - bash/**
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: bash
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+
+    - name: Test
+      run: ./test/bats/bin/bats test/hello.bats
+
+    - name: Run
+      run: ./src/hello.bash
