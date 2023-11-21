@@ -23,15 +23,8 @@
   ```
 
 ### Run locally
-* Test with `./gradlew test`
-* Run with `./gradlew run`
+* Test with `./test/bats/bin/bats test/test.bats`
+* Run with `./src/hello.bash`
 
 ### Create project from scratch
-* Create project using `gradle init --type java-application --dsl kotlin --test-framework junit-jupiter`
-* Add [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/) dependencies in [build.gradle.kts](build.gradle.kts):
-  ```kotlin
-  dependencies {
-    testImplementation("org.mockito:mockito-core:x.x.x")
-    testImplementation("org.assertj:assertj-core:x.x.x")
-  }
-  ```
+* Just create bash scripts! 😄
