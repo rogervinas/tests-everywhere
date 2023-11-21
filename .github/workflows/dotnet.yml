@@ -1,0 +1,38 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "main" ]
+    paths:
+      - .github/workflows/dotnet.yml
+      - dotnet/**
+  pull_request:
+    branches: [ "main" ]
+    paths:
+      - .github/workflows/dotnet.yml
+      - dotnet/**
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: dotnet
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0
+        cache: false
+
+    - name: Test
+      run: dotnet test -v quiet -l:"console;verbosity=normal"
