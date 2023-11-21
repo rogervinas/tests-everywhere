@@ -8,17 +8,17 @@
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 * Execute `./docker-run.sh`
 * Once inside the container:
-    * First time only, install dependencies with `bundle install`
-    * Test with `python -m unittest discover -v`
-    * Run with `python -m main`
+  * First time only, install dependencies with `bundle install`
+  * Test with `python -m unittest discover -v`
+  * Run with `python -m main`
 
 ## Run this project locally
 
 ### Pre-requisites
 * Install [Python](https://www.python.org/downloads/) manually or ...
-    * Install [pyenv](https://github.com/pyenv/pyenv) version manager and ..
-        * List available versions executing `pyenv install -l`
-        * Install **Python** executing `pyenv install 3.12` and `pyenv global 3.12`
+  * Install [pyenv](https://github.com/pyenv/pyenv) version manager and ..
+    * List available versions executing `pyenv install -l`
+    * Install **Python** executing `pyenv install 3.12` and `pyenv global 3.12`
 
 ### Run locally
 * Test with `python -m unittest discover -v`

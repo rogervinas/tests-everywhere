@@ -9,8 +9,8 @@
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 * Execute `./docker-run.sh`
 * Once inside the container:
-    * Test with `sbt test`
-    * Run with `sbt run`
+  * Test with `sbt test`
+  * Run with `sbt run`
 
 ## Run this project locally
 
