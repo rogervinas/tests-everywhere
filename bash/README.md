@@ -8,7 +8,7 @@
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 * Execute `./docker-run.sh`
 * Once inside the container:
-  * Test with `./test/bats/bin/bats test/test.bats`
+  * Test with `./test/bats/bin/bats test/hello.bats`
   * Run with `./src/hello.bash`
 
 ## Run this project locally
@@ -23,7 +23,7 @@
   ```
 
 ### Run locally
-* Test with `./test/bats/bin/bats test/test.bats`
+* Test with `./test/bats/bin/bats test/hello.bats`
 * Run with `./src/hello.bash`
 
 ### Create project from scratch
