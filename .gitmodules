@@ -1,6 +1,3 @@
-[submodule "bash/--force"]
-	path = bash/--force
-	url = https://github.com/bats-core/bats-core.git
 [submodule "bash/test/test_helper/bats-assert"]
 	path = bash/test/test_helper/bats-assert
 	url = https://github.com/bats-core/bats-assert.git
