@@ -1,6 +1,6 @@
-﻿using HelloApp.Main;
+﻿using Hello.Main;
 
 var message = new HelloWorldMessage();
 var console = new HelloSystemConsole();
-var app = new HelloApp.Main.HelloApp(message, console);
+var app = new HelloApp(message, console);
 app.PrintHello();

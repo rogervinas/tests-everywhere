@@ -1,4 +1,4 @@
-﻿namespace HelloApp.Main;
+﻿namespace Hello.Main;
 
 public interface HelloConsole {
     void Print(String text);

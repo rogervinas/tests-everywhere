@@ -1,7 +1,7 @@
-using HelloApp.Main;
+using Hello.Main;
 using Moq;
 
-namespace HelloApp.Test;
+namespace Hello.Test;
 
 public class HelloAppTest
 {
@@ -16,7 +16,7 @@ public class HelloAppTest
         var consoleMock = new Mock<HelloConsole>();
         var console = consoleMock.Object;
 
-        var app = new Main.HelloApp(message, console);
+        var app = new HelloApp(message, console);
         app.PrintHello();
 
         consoleMock.Verify(console => console.Print(messageText), Times.Once);

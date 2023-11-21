@@ -1,6 +1,6 @@
-using HelloApp.Main;
+using Hello.Main;
 
-namespace HelloApp.Test;
+namespace Hello.Test;
 
 public class HelloMessageTest
 {
