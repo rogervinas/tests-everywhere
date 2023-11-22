@@ -12,6 +12,7 @@ git submodule update
 ```
 
 * [Show me the code](#show-me-the-code)
+  * [Create project from scratch](#create-project-from-scratch)
   * [Implementation](#implementation)
   * [Test](#test)
 * [Run this project using 🐳 docker](#run-this-project-using--docker)
