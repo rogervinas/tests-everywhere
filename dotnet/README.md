@@ -35,7 +35,7 @@ public class HelloWorldMessage : HelloMessage
 }
 ```
 
-We create it as an interface not to have problems with [Moq](https://www.devlooped.com/moq/) mocking it for the test. There are other alternatives mocking final classes but for simplicity we will just use an interface.
+Creating it as an interface will allow us to mock it for testing using [Moq](https://www.devlooped.com/moq/) which does not support mocking final classes. Maybe other libraries support that but using an interface is simpler.
 
 2. Same way create `HelloConsole` interface and `HelloSystemConsole` class implementing it in [Hello.Main/HelloConsole.cs](Hello.Main/HelloConsole.cs):
 
@@ -82,6 +82,8 @@ app.PrintHello();
 
 ### Test
 
+Following [NUnit > Writing Tests](https://docs.nunit.org/articles/nunit/writing-tests/attributes.html) guide ...
+
 1. Test `HelloMessage` in [Hello.Test/HelloMessageTest.cs](Hello.Test/HelloMessageTest.cs):
 
 ```csharp
@@ -101,32 +103,33 @@ public void ShouldPrintHelloMessage()
 {
     var messageText = "Hello Test!";
 
-    // Create a mock of HelloMessage
+    // 2.1 Create a mock of HelloMessage
     var messageMock = new Mock<HelloMessage>();
-    // Expect HelloMessage mock to receive a call to .Text
+    // - Expect HelloMessage mock to receive a call to .Text
     // and return "Hello Test!"
     messageMock.Setup(message => message.Text).Returns(messageText);
     // Get the mock object to pass it to HelloApp
     var message = messageMock.Object;
 
-    // Create a mock of HelloConsole
+    // 2.2 Create a mock of HelloConsol
     var consoleMock = new Mock<HelloConsole>();
-    // No need to set expectations for this one
-    // Get the mock object to pass it to HelloApp
+    // - No need to set expectations for this one
+    // - Get the mock object to pass it to HelloApp
     var console = consoleMock.Object;
 
-    // Create a HelloApp, the one we want to test, passing the mocks
+    // 2.3 Create a HelloApp, the one we want to test, passing the mocks
     var app = new HelloApp(message, console);
-    // Execute the method we want to test
+    // - Execute the method we want to test
     app.PrintHello();
 
-    // Verify HelloConsole mock has received one time
+    // 2.4 Verify HelloConsole mock has received one time
     // a call to .Print with "Hello Test!"
     consoleMock.Verify(console => console.Print(messageText), Times.Once);
 }
 ```
 
 3. Test output should look like:
+
 ```
 NUnit Adapter 4.2.0.0: Test execution complete
   Passed ShouldPrintHelloMessage [180 ms]

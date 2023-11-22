@@ -63,7 +63,7 @@ helloApp helloMessage helloConsole
 
 ### Test
 
-Based on [BATS Tutorial > Your first test](https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test) ...
+Following [BATS Tutorial > Your first test](https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test) ...
 
 1. For simplicity create all tests in [test/hello.bats](test/hello.bats) file
 
@@ -150,6 +150,7 @@ Take a look at the other [Libraries and Add-ons](https://bats-core.readthedocs.i
 
 - Create an empty project with `src` and `test` folders
 - Follow [Quick installation](https://bats-core.readthedocs.io/en/stable/tutorial.html#quick-installation) guide to install **BATS** submodules:
+
 ```
 git submodule add https://github.com/bats-core/bats-core.git test/bats
 git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
