@@ -95,13 +95,13 @@ setup() {
 ```shell
 @test "helloApp should print hello message" {
     # 4.1 Create a helloMessage function mock
-    # - Will return "Hello Test!"
+    # that will return "Hello Test!"
     function helloMessageMock() {
         echo "Hello Test!"
     }
 
     # 4.2 Create a helloConsole function mock
-    # - Will print parameter passed within "helloConsoleMock[...]"
+    # that will print parameter passed within "helloConsoleMock[...]"
     function helloConsoleMock() {
         local text=$1
         echo "helloConsoleMock[$text]"
