@@ -20,8 +20,8 @@ impl HelloApp {
 mod tests {
   use super::*;
   use mockall::predicate::*;
-  use crate::hello_console::MockHelloConsole;
   use crate::hello_message::MockHelloMessage;
+  use crate::hello_console::MockHelloConsole;
 
   #[test]
   fn should_print_hello_message() {
