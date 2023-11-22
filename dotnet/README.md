@@ -105,13 +105,13 @@ public void ShouldPrintHelloMessage()
 
     // 2.1 Create a mock of HelloMessage
     var messageMock = new Mock<HelloMessage>();
-    // - Expect HelloMessage mock to receive a call to .Text
+    // - Expect HelloMessage mock to receive a call to Text
     // and return "Hello Test!"
     messageMock.Setup(message => message.Text).Returns(messageText);
     // Get the mock object to pass it to HelloApp
     var message = messageMock.Object;
 
-    // 2.2 Create a mock of HelloConsol
+    // 2.2 Create a mock of HelloConsole
     var consoleMock = new Mock<HelloConsole>();
     // - No need to set expectations for this one
     // - Get the mock object to pass it to HelloApp
@@ -123,7 +123,7 @@ public void ShouldPrintHelloMessage()
     app.PrintHello();
 
     // 2.4 Verify HelloConsole mock has received one time
-    // a call to .Print with "Hello Test!"
+    // a call to Print() with "Hello Test!"
     consoleMock.Verify(console => console.Print(messageText), Times.Once);
 }
 ```
