@@ -65,9 +65,9 @@ helloApp helloMessage helloConsole
 
 Based on [BATS Tutorial > Your first test](https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test) ...
 
-1. For simplicity we create all tests in [test/hello.bats](test/hello.bats) file
+1. For simplicity create all tests in [test/hello.bats](test/hello.bats) file
 
-2. We configure current directory and load some helper modules in `setup` function:
+2. Configure current directory and load some helper modules in `setup` function:
 
 ```shell
 setup() {
@@ -79,7 +79,7 @@ setup() {
 }
 ```
 
-3. We test `helloMessage` function using [assert_output](https://github.com/bats-core/bats-assert#assert_output) helper:
+3. Test `helloMessage` function using [assert_output](https://github.com/bats-core/bats-assert#assert_output) helper:
 
 ```shell
 @test "helloMessage should return hello world" {
@@ -90,7 +90,7 @@ setup() {
 }
 ```
 
-4. We test `helloApp` function creating mock functions for `helloMessage` and `helloConsole`:
+4. Test `helloApp` function creating mock functions for `helloMessage` and `helloConsole`:
 
 ```shell
 @test "helloApp should print hello message" {
@@ -110,7 +110,7 @@ setup() {
 }
 ```
 
-5. We test the whole `hello.bash` script too:
+5. Test the whole `hello.bash` script too:
 
 ```shell
 @test "hello.bash should print hello world" {
