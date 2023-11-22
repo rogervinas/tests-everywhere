@@ -140,14 +140,12 @@ func TestShouldReturnPrintHelloMessage(t *testing.T) {
 3. Test output should look like:
 
 ```
-NUnit Adapter 4.2.0.0: Test execution complete
-  Passed ShouldPrintHelloMessage [180 ms]
-  Passed ShouldReturnHelloWorld [7 ms]
-
-Test Run Successful.
-Total tests: 2
-     Passed: 2
- Total time: 2.7702 Seconds
+=== RUN   TestShouldReturnPrintHelloMessage
+--- PASS: TestShouldReturnPrintHelloMessage (0.00s)
+=== RUN   TestShouldReturnHelloWorld
+--- PASS: TestShouldReturnHelloWorld (0.00s)
+PASS
+ok      org.hello/main  0.412s
 ```
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
