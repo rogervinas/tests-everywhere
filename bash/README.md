@@ -6,29 +6,32 @@
 [Bash](https://www.gnu.org/software/bash/) testing with [BATS](https://bats-core.readthedocs.io/en/stable/#)
 
 ⚠️ This project includes **BATS** git submodules so once you clone the repo you will need to init and update them:
+
 ```
 git submodule init
 git submodule update
 ```
 
-* [Show me the code](#show-me-the-code)
-  * [Implementation](#implementation)
-  * [Test](#test)
-* [Run this project using 🐳 docker](#run-this-project-using--docker)
-* [Run this project locally](#run-this-project-locally)
+- [Show me the code](#show-me-the-code)
+  - [Implementation](#implementation)
+  - [Test](#test)
+- [Run this project using 🐳 docker](#run-this-project-using--docker)
+- [Run this project locally](#run-this-project-locally)
 
 ## Show me the code
 
 ### Implementation
 
-1) Create `helloMessage` function in [src/hello-message.bash](src/hello-message.bash):
+1. Create `helloMessage` function in [src/hello-message.bash](src/hello-message.bash):
+
 ```shell
 function helloMessage() {
     echo "Hello World!"
 }
 ```
 
-2) Create `helloConsole` function in [src/hello-console.bash](src/hello-console.bash):
+2. Create `helloConsole` function in [src/hello-console.bash](src/hello-console.bash):
+
 ```shell
 function helloConsole() {
     local text=$1
@@ -36,7 +39,8 @@ function helloConsole() {
 }
 ```
 
-3) Create `helloApp` function in [src/hello-app.bash](src/hello-app.bash):
+3. Create `helloApp` function in [src/hello-app.bash](src/hello-app.bash):
+
 ```shell
 function helloApp() {
     local messageFn=$1
@@ -47,7 +51,8 @@ function helloApp() {
 
 Note that `helloApp` function receives the two other functions as parameters and just executes them.
 
-4) Create a main script [src/hello-bash](src/hello.bash) that just loads the 3 required scripts and executes `helloApp` passing `helloMessage` and `helloConsole` functions as parameters:
+4. Create a main script [src/hello-bash](src/hello.bash) that just loads the 3 required scripts and executes `helloApp` passing `helloMessage` and `helloConsole` functions as parameters:
+
 ```shell
 source "$(dirname "${BASH_SOURCE[0]}")/hello-message.bash"
 source "$(dirname "${BASH_SOURCE[0]}")/hello-console.bash"
@@ -58,11 +63,12 @@ helloApp helloMessage helloConsole
 
 ### Test
 
-Based on [BATS Tutorial > Your first test](https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test) ...
+Following [BATS Tutorial > Your first test](https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test) ...
 
-1) For simplicity we create all tests in [test/hello.bats](test/hello.bats) file
+1. For simplicity create all tests in [test/hello.bats](test/hello.bats) file
 
-2) We configure current directory and load some helper modules in `setup` function:
+2. Configure current directory and load some helper modules in `setup` function:
+
 ```shell
 setup() {
     load 'test_helper/bats-support/load'
@@ -73,7 +79,8 @@ setup() {
 }
 ```
 
-3) We test `helloMessage` function using [assert_output](https://github.com/bats-core/bats-assert#assert_output) helper:
+3. Test `helloMessage` function using [assert_output](https://github.com/bats-core/bats-assert#assert_output) helper:
+
 ```shell
 @test "helloMessage should return hello world" {
     source hello-message.bash
@@ -83,7 +90,8 @@ setup() {
 }
 ```
 
-4) We test `helloApp` function creating mock functions for `helloMessage` and `helloConsole`:
+4. Test `helloApp` function creating mock functions for `helloMessage` and `helloConsole`:
+
 ```shell
 @test "helloApp should print hello message" {
     function helloMessageMock() {
@@ -102,7 +110,8 @@ setup() {
 }
 ```
 
-5) We test the whole `hello.bash` script too:
+5. Test the whole `hello.bash` script too:
+
 ```shell
 @test "hello.bash should print hello world" {
     run hello.bash
@@ -111,7 +120,8 @@ setup() {
 }
 ```
 
-6) Test output should look like:
+6. Test output should look like:
+
 ```
 hello.bats
  ✓ helloMessage should return hello world
@@ -124,26 +134,30 @@ hello.bats
 Take a look at the other [Libraries and Add-ons](https://bats-core.readthedocs.io/en/stable/writing-tests.html#libraries-and-add-ons) that may be useful in the future. For example, there is a couple of **bats-mock** libraries that can be used to mock programs (but unfortunately not able to mock functions).
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
-* Execute `./docker-run.sh`
-* Once inside the container:
-  * Test with `./test/bats/bin/bats test/hello.bats`
-  * Run with `./src/hello.bash`
+
+- Execute `./docker-run.sh`
+- Once inside the container:
+  - Test with `./test/bats/bin/bats test/hello.bats`
+  - Run with `./src/hello.bash`
 
 ## Run this project locally
 
 ### Pre-requisites
-* Ensure you have **bash** installed `bash --version` (this project uses version 5.2)
+
+- Ensure you have **bash** installed `bash --version` (this project uses version 5.2)
 
 ### Create project from scratch
-* Create an empty project with `src` and `test` folders
-* Follow [Quick installation](https://bats-core.readthedocs.io/en/stable/tutorial.html#quick-installation) guide to install **BATS** submodules:
-  ```
-  git submodule add https://github.com/bats-core/bats-core.git test/bats
-  git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
-  git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
-  ```
+
+- Create an empty project with `src` and `test` folders
+- Follow [Quick installation](https://bats-core.readthedocs.io/en/stable/tutorial.html#quick-installation) guide to install **BATS** submodules:
+
+```
+git submodule add https://github.com/bats-core/bats-core.git test/bats
+git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
+git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
+```
 
 ### Run locally
-* Test with `./test/bats/bin/bats test/hello.bats`
-* Run with `./src/hello.bash`
 
+- Test with `./test/bats/bin/bats test/hello.bats`
+- Run with `./src/hello.bash`
