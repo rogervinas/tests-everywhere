@@ -145,17 +145,17 @@ public void ShouldPrintHelloMessage()
 
 - Execute these commands:
 
-  ```
-  dotnet new sln --name Hello
+```
+dotnet new sln --name Hello
 
-  dotnet new console --language "C#" --framework net8.0 --name Hello.Main
+dotnet new console --language "C#" --framework net8.0 --name Hello.Main
 
-  dotnet new nunit --language "C#" --framework net8.0 --name Hello.Test
-  dotnet add ./Hello.Test reference ./Hello.Main
-  dotnet add ./Hello.Test package Moq --version 4.20.69
+dotnet new nunit --language "C#" --framework net8.0 --name Hello.Test
+dotnet add ./Hello.Test reference ./Hello.Main
+dotnet add ./Hello.Test package Moq --version 4.20.69
 
-  dotnet sln Hello.sln add ./Hello.Main ./Hello.Test
-  ```
+dotnet sln Hello.sln add ./Hello.Main ./Hello.Test
+```
 
 ### Run locally
 
