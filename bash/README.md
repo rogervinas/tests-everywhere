@@ -51,7 +51,7 @@ function helloApp() {
 
 Note that `helloApp` function receives the two other functions as parameters and just executes them.
 
-4. Create a main script [src/hello-bash](src/hello.bash) that just loads the 3 required scripts and executes `helloApp` passing `helloMessage` and `helloConsole` functions as parameters:
+4. Create a main script [hello.bash](src/hello.bash) that just loads the 3 required scripts and executes `helloApp` passing `helloMessage` and `helloConsole` functions as parameters:
 
 ```shell
 source "$(dirname "${BASH_SOURCE[0]}")/hello-message.bash"
