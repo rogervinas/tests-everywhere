@@ -58,7 +58,7 @@ app.print_hello()
 
 ### Test
 
-Following [unittest > Basic example](https://docs.python.org/3/library/unittest.html#basic-example) guide ...
+Following [unittest > Basic example](https://docs.python.org/3/library/unittest.html#basic-example) and [unittest.mock > Quick Guide](https://docs.python.org/3/library/unittest.mock.html#quick-guide) guides ...
 
 1. Test `HelloMessage` in [test_hello_message.py](test/test_hello_message.py):
 

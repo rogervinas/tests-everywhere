@@ -82,7 +82,7 @@ app.PrintHello();
 
 ### Test
 
-Following [NUnit > Writing Tests](https://docs.nunit.org/articles/nunit/writing-tests/attributes.html) guide ...
+Following [NUnit > Writing Tests](https://docs.nunit.org/articles/nunit/writing-tests/attributes.html) and [Moq](https://github.com/devlooped/moq#moq) guides ...
 
 1. Test `HelloMessage` in [HelloMessageTest.cs](Hello.Test/HelloMessageTest.cs):
 

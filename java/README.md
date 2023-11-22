@@ -72,7 +72,7 @@ public class Main {
 
 ### Test
 
-Following [JUnit5 > Writing Tests](https://junit.org/junit5/docs/current/user-guide/#writing-tests) guide ...
+Following [JUnit5 > Writing Tests](https://junit.org/junit5/docs/current/user-guide/#writing-tests), [Mockito](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#stubbing) and [AssertJ](https://assertj.github.io/doc/#assertj-core-assertions-guide) guides ...
 
 1. Test `HelloMessage` in [HelloMessageTest.java](src/test/java/org/hello/HelloMessageTest.java):
 

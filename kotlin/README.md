@@ -59,7 +59,7 @@ fun main() {
 
 ### Test
 
-Following [Kotest > Writing Tests](https://kotest.io/docs/framework/writing-tests.html) guide ...
+Following [Kotest > Writing Tests](https://kotest.io/docs/framework/writing-tests.html) and [MockK](https://mockk.io/#class-mock) guides ...
 
 1. Test `HelloMessage` in [HelloMessageTest.kt](src/test/kotlin/org/hello/HelloMessageTest.kt):
 
