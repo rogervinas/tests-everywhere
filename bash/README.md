@@ -112,7 +112,7 @@ setup() {
     # 4.4 Execute helloApp passing mock functions
     run helloApp helloMessageMock helloConsoleMock
 
-    # Assert helloConsoleMock has been called once
+    # 4.5 Assert helloConsoleMock has been called once
     # with the returned message by helloMessageMock
     assert_output "helloConsoleMock[Hello Test!]"
 }
