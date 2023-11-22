@@ -8,8 +8,8 @@ mod hello_app;
 use crate::hello_app::HelloApp;
 
 fn main() {
-    let message = HelloWorldMessage::new();
-    let console = HelloSystemConsole::new();
-    let app = HelloApp::new(Box::new(message), Box::new(console));
-    app.print_hello();
+  let message = HelloWorldMessage::new();
+  let console = HelloSystemConsole::new();
+  let app = HelloApp::new(Box::new(message), Box::new(console));
+  app.print_hello();
 }

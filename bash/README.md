@@ -22,7 +22,7 @@ git submodule update
 
 ### Implementation
 
-1. Create `helloMessage` function in [src/hello-message.bash](src/hello-message.bash):
+1. Create `helloMessage` function in [hello-message.bash](src/hello-message.bash):
 
 ```shell
 function helloMessage() {
@@ -30,7 +30,7 @@ function helloMessage() {
 }
 ```
 
-2. Create `helloConsole` function in [src/hello-console.bash](src/hello-console.bash):
+2. Create `helloConsole` function in [hello-console.bash](src/hello-console.bash):
 
 ```shell
 function helloConsole() {
@@ -39,7 +39,7 @@ function helloConsole() {
 }
 ```
 
-3. Create `helloApp` function in [src/hello-app.bash](src/hello-app.bash):
+3. Create `helloApp` function in [hello-app.bash](src/hello-app.bash):
 
 ```shell
 function helloApp() {
@@ -65,7 +65,7 @@ helloApp helloMessage helloConsole
 
 Following [BATS Tutorial > Your first test](https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test) ...
 
-1. For simplicity create all tests in [test/hello.bats](test/hello.bats) file
+1. For simplicity create all tests in [hello.bats](test/hello.bats) file
 
 2. Configure current directory and load some helper modules in `setup` function:
 
@@ -90,22 +90,30 @@ setup() {
 }
 ```
 
-4. Test `helloApp` function creating mock functions for `helloMessage` and `helloConsole`:
+4. Test `helloApp` function:
 
 ```shell
 @test "helloApp should print hello message" {
+    # 4.1 Create a helloMessage function mock
+    # - Will return "Hello Test!"
     function helloMessageMock() {
         echo "Hello Test!"
     }
 
+    # 4.2 Create a helloConsole function mock
+    # - Will print parameter passed within "helloConsoleMock[...]"
     function helloConsoleMock() {
         local text=$1
         echo "helloConsoleMock[$text]"
     }
 
+    # 4.3 Load helloApp function, the one we want to test
     source hello-app.bash
+    # 4.4 Execute helloApp passing mock functions
     run helloApp helloMessageMock helloConsoleMock
 
+    # Assert helloConsoleMock has been called once
+    # with the returned message by helloMessageMock
     assert_output "helloConsoleMock[Hello Test!]"
 }
 ```

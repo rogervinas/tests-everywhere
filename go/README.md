@@ -19,13 +19,13 @@
 
 ```go
 type HelloMessage interface {
-    Text() string
+  Text() string
 }
 
 type HelloWorldMessage struct{}
 
 func (message *HelloWorldMessage) Text() string {
-    return "Hello World!"
+  return "Hello World!"
 }
 ```
 
@@ -35,13 +35,13 @@ Creating it as an interface will allow us to mock it for testing.
 
 ```go
 type HelloConsole interface {
-    Print(text string)
+  Print(text string)
 }
 
 type HelloSystemConsole struct{}
 
 func (console *HelloSystemConsole) Print(text string) {
-    fmt.Println(text)
+  fmt.Println(text)
 }
 ```
 
@@ -49,12 +49,12 @@ func (console *HelloSystemConsole) Print(text string) {
 
 ```go
 type HelloApp struct {
-    message HelloMessage
-    console HelloConsole
+  message HelloMessage
+  console HelloConsole
 }
 
 func (app *HelloApp) PrintHello() {
-    app.console.Print(app.message.Text())
+  app.console.Print(app.message.Text())
 }
 ```
 
@@ -62,10 +62,10 @@ func (app *HelloApp) PrintHello() {
 
 ```go
 func main() {
-    message := HelloWorldMessage{}
-    console := HelloSystemConsole{}
-    app := HelloApp{&message, &console}
-    app.PrintHello()
+  message := HelloWorldMessage{}
+  console := HelloSystemConsole{}
+  app := HelloApp{&message, &console}
+  app.PrintHello()
 }
 ```
 
@@ -77,11 +77,11 @@ Following [Standard library > testing](https://pkg.go.dev/testing) guide ...
 
 ```go
 func TestShouldReturnHelloWorld(t *testing.T) {
-    messageText := "Hello World!"
-    message := HelloWorldMessage{}
-    if message.Text() != messageText {
-        t.Fatalf("Expected %s but got %s", messageText, message.Text())
-    }
+  messageText := "Hello World!"
+  message := HelloWorldMessage{}
+  if message.Text() != messageText {
+    t.Fatalf("Expected %s but got %s", messageText, message.Text())
+  }
 }
 ```
 
@@ -90,50 +90,52 @@ func TestShouldReturnHelloWorld(t *testing.T) {
 ```go
 // 2.1 Define a HelloMessageMock struct that ...
 type HelloMessageMock struct {
-    text string
+  text string
 }
 
 // ... fullfils HelloMessage interface
 func (message *HelloMessageMock) Text() string {
-    return message.text
+  return message.text
 }
 
 // 2.2 Define a HelloConsoleMock that ...
 type HelloConsoleMock struct {
-    Calls int
-    Text  string
+  Calls int
+  Text  string
 }
 
 // ... fullfills HelloConsole interface
 func (console *HelloConsoleMock) Print(text string) {
-    console.Calls++
-    console.Text = text
+  console.Calls++
+  console.Text = text
 }
 
 func TestShouldReturnPrintHelloMessage(t *testing.T) {
-    // 2.3 Create a HelloMessageMock
-    // - It will return "Hello Test!"
-    messageText := "Hello Test!"
-    message := HelloMessageMock{messageText}
 
-    // 2.4 Create a HelloConsoleMock
-    // - It will capture the calls made
-    console := HelloConsoleMock{}
+  messageText := "Hello Test!"
 
-    // 2.5 Create a HelloApp, the one we want to test, passing the mocks
-    app := HelloApp{&message, &console}
-    // - Execute the method we want to test
-    app.PrintHello()
+  // 2.3 Create a HelloMessageMock
+  // that will return "Hello Test!"
+  message := HelloMessageMock{messageText}
 
-    // 2.6 Assert HelloConsoleMock has been called once
-    if console.Calls != 1 {
-        t.Fatalf("HelloConsole expected calls 1 but got %d", console.Calls)
-    }
+  // 2.4 Create a HelloConsoleMock
+  // that will capture its calls
+  console := HelloConsoleMock{}
 
-    // 2.7 Assert HelloConsoleMock has been called with "Hello Test!"
-    if console.Text != messageText {
-        t.Fatalf("HelloConsole expected text %s but got %s", messageText, console.Text)
-    }
+  // 2.5 Create a HelloApp, the one we want to test, passing the mocks
+  app := HelloApp{&message, &console}
+  // 2.6 Execute the method we want to test
+  app.PrintHello()
+
+  // 2.7 Assert HelloConsoleMock has been called once
+  if console.Calls != 1 {
+    t.Fatalf("HelloConsole expected calls 1 but got %d", console.Calls)
+  }
+
+  // 2.8 Assert HelloConsoleMock has been called with "Hello Test!"
+  if console.Text != messageText {
+    t.Fatalf("HelloConsole expected text %s but got %s", messageText, console.Text)
+  }
 }
 ```
 
