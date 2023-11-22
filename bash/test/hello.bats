@@ -29,7 +29,7 @@ setup() {
     assert_output "helloConsoleMock[Hello Test!]"
 }
 
-@test "hello.sh should print hello world" {
+@test "hello.bash should print hello world" {
     run hello.bash
 
     assert_output "Hello World!"   
