@@ -58,7 +58,7 @@ func (app *HelloApp) PrintHello() {
 }
 ```
 
-4. Create main function in [xx](Main.go) that wraps it all together:
+4. Create main function in [Main.go](Main.go) that wraps it all together:
 
 ```go
 func main() {
