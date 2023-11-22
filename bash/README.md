@@ -19,16 +19,25 @@ git submodule update
 
 ## Show me the code
 
+### Create project from scratch
+* Create an empty project with `src` and `test` folders
+* Follow [Quick installation](https://bats-core.readthedocs.io/en/stable/tutorial.html#quick-installation) guide to install **BATS** submodules:
+  ```
+  git submodule add https://github.com/bats-core/bats-core.git test/bats
+  git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
+  git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
+  ```
+
 ### Implementation
 
-1) We create `helloMessage` function in [src/hello-message.bash](src/hello-message.bash):
+1) Create `helloMessage` function in [src/hello-message.bash](src/hello-message.bash):
 ```shell
 function helloMessage() {
     echo "Hello World!"
 }
 ```
 
-2) We create `helloConsole` function in [src/hello-console.bash](src/hello-console.bash):
+2) Create `helloConsole` function in [src/hello-console.bash](src/hello-console.bash):
 ```shell
 function helloConsole() {
     local text=$1
@@ -36,7 +45,7 @@ function helloConsole() {
 }
 ```
 
-3) We create `helloApp` function in [src/hello-app.bash](src/hello-app.bash):
+3) Create `helloApp` function in [src/hello-app.bash](src/hello-app.bash):
 ```shell
 function helloApp() {
     local messageFn=$1
@@ -47,7 +56,7 @@ function helloApp() {
 
 Note that `helloApp` function receives the two other functions as parameters and just executes them.
 
-4) Main script [src/hello-bash](src/hello.bash) just loads the 3 required scripts and executes `helloApp` passing `helloMessage` and `helloConsole` functions as parameters:
+4) Create a main script [src/hello-bash](src/hello.bash) that just loads the 3 required scripts and executes `helloApp` passing `helloMessage` and `helloConsole` functions as parameters:
 ```shell
 source "$(dirname "${BASH_SOURCE[0]}")/hello-message.bash"
 source "$(dirname "${BASH_SOURCE[0]}")/hello-console.bash"
@@ -138,11 +147,3 @@ Take a look at the other [Libraries and Add-ons](https://bats-core.readthedocs.i
 * Test with `./test/bats/bin/bats test/hello.bats`
 * Run with `./src/hello.bash`
 
-### Create project from scratch
-* Install [BATS submodules](https://bats-core.readthedocs.io/en/stable/tutorial.html#quick-installation)
-  ```
-  git submodule add https://github.com/bats-core/bats-core.git test/bats
-  git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
-  git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
-  ```
-* And just create **bash** scripts! 😄
