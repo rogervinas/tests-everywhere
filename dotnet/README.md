@@ -160,7 +160,7 @@ Total tests: 2
 
 - Execute these commands:
 
-```
+```shell
 dotnet new sln --name Hello
 
 dotnet new console --language "C#" --framework net8.0 --name Hello.Main
