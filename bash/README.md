@@ -22,7 +22,7 @@ git submodule update
 
 ### Implementation
 
-1. Create `helloMessage` function in [src/hello-message.bash](src/hello-message.bash):
+1. Create `helloMessage` function in [hello-message.bash](src/hello-message.bash):
 
 ```shell
 function helloMessage() {
@@ -30,7 +30,7 @@ function helloMessage() {
 }
 ```
 
-2. Create `helloConsole` function in [src/hello-console.bash](src/hello-console.bash):
+2. Create `helloConsole` function in [hello-console.bash](src/hello-console.bash):
 
 ```shell
 function helloConsole() {
@@ -39,7 +39,7 @@ function helloConsole() {
 }
 ```
 
-3. Create `helloApp` function in [src/hello-app.bash](src/hello-app.bash):
+3. Create `helloApp` function in [hello-app.bash](src/hello-app.bash):
 
 ```shell
 function helloApp() {
@@ -65,7 +65,7 @@ helloApp helloMessage helloConsole
 
 Following [BATS Tutorial > Your first test](https://bats-core.readthedocs.io/en/stable/tutorial.html#your-first-test) ...
 
-1. For simplicity create all tests in [test/hello.bats](test/hello.bats) file
+1. For simplicity create all tests in [hello.bats](test/hello.bats) file
 
 2. Configure current directory and load some helper modules in `setup` function:
 

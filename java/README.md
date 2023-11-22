@@ -105,8 +105,8 @@ void shouldPrintHelloMessage() {
   // - Execute the method we want to test
   app.printHello();
 
-  // 2.4 Verify HelloConsole mock has received one time
-  // a call to print() with "Hello Test!"
+  // 2.4 Verify HelloConsole mock print() method
+  // has been called once with "Hello Test!"
   verify(console).print(messageText);
 }
 ```

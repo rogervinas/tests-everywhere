@@ -108,8 +108,8 @@ describe("HelloApp", () => {
     // - Execute the method we want to test
     app.printHello();
 
-    // 2.7 Verify HelloConsole mock has received one time
-    // a call to print() with "Hello Test!"
+    // 2.7 Verify HelloConsole mock print() method
+    // has been called once with "Hello Test!"
     expect(console.print).toHaveBeenCalledTimes(1);
     expect(console.print).toHaveBeenCalledWith(messageText);
   });
