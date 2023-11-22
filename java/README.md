@@ -127,7 +127,7 @@ BUILD SUCCESSFUL in 2s
 
 - Execute `./docker-run.sh`
 - Once inside the container:
-  - Test with `./gradlew test`
+  - Test with `./gradlew test --rerun-tasks`
   - Run with `./gradlew run`
 
 ## Run this project locally
@@ -142,7 +142,7 @@ BUILD SUCCESSFUL in 2s
 
 ### Run locally
 
-- Test with `./gradlew test`
+- Test with `./gradlew test --rerun-tasks`
 - Run with `./gradlew run`
 
 ### Create project from scratch
