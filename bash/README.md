@@ -12,22 +12,12 @@ git submodule update
 ```
 
 * [Show me the code](#show-me-the-code)
-  * [Create project from scratch](#create-project-from-scratch)
   * [Implementation](#implementation)
   * [Test](#test)
 * [Run this project using 🐳 docker](#run-this-project-using--docker)
 * [Run this project locally](#run-this-project-locally)
 
 ## Show me the code
-
-### Create project from scratch
-* Create an empty project with `src` and `test` folders
-* Follow [Quick installation](https://bats-core.readthedocs.io/en/stable/tutorial.html#quick-installation) guide to install **BATS** submodules:
-  ```
-  git submodule add https://github.com/bats-core/bats-core.git test/bats
-  git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
-  git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
-  ```
 
 ### Implementation
 
@@ -143,6 +133,15 @@ Take a look at the other [Libraries and Add-ons](https://bats-core.readthedocs.i
 
 ### Pre-requisites
 * Ensure you have **bash** installed `bash --version` (this project uses version 5.2)
+
+### Create project from scratch
+* Create an empty project with `src` and `test` folders
+* Follow [Quick installation](https://bats-core.readthedocs.io/en/stable/tutorial.html#quick-installation) guide to install **BATS** submodules:
+  ```
+  git submodule add https://github.com/bats-core/bats-core.git test/bats
+  git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
+  git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
+  ```
 
 ### Run locally
 * Test with `./test/bats/bin/bats test/hello.bats`
