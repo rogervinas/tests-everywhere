@@ -102,8 +102,6 @@ setup() {
 }
 ```
 
-Note that [Libraries and Add-ons](https://bats-core.readthedocs.io/en/stable/writing-tests.html#libraries-and-add-ons) links to a couple of **bats-mock** libraries that can be used to mock programs, but not functions. You can take a look at that!
-
 5) We test the whole `hello.bash` script too:
 ```shell
 @test "hello.bash should print hello world" {
@@ -122,6 +120,8 @@ hello.bats
 
 3 tests, 0 failures
 ```
+
+Take a look at the other [Libraries and Add-ons](https://bats-core.readthedocs.io/en/stable/writing-tests.html#libraries-and-add-ons) that may be useful in the future. For example, there is a couple of **bats-mock** libraries that can be used to mock programs (but unfortunately not able to mock functions).
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 * Execute `./docker-run.sh`
