@@ -96,19 +96,19 @@ describe("HelloApp", () => {
       };
     });
     // 2.4 Create a HelloMessage
-    // - It will be a mock thanks to 2.1 and 2.2
+    // that will be a mock thanks to 2.1 and 2.2
     const message = new HelloMessage();
 
     // 2.5 Create a HelloConsole
-    // - It will be a mock thanks to 2.3
+    // that will be a mock thanks to 2.3
     const console = new HelloConsole();
 
     // 2.6 Create a HelloApp, the one we want to test, passing the mocks
     const app = new HelloApp(message, console);
-    // - Execute the method we want to test
+    // 2.7 Execute the method we want to test
     app.printHello();
 
-    // 2.7 Verify HelloConsole mock print() method
+    // 2.8 Verify HelloConsole mock print() method
     // has been called once with "Hello Test!"
     expect(console.print).toHaveBeenCalledTimes(1);
     expect(console.print).toHaveBeenCalledWith(messageText);

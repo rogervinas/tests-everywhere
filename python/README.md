@@ -78,20 +78,20 @@ class HelloAppTest(unittest.TestCase):
 
     # 2.1 Create a mock of HelloMessage
     message = MagicMock()
-    # - Return "Hello Test!" whenever text is called
+    # 2.2 Return "Hello Test!" whenever text is called
     message.text = message_text
 
-    # 2.2 Create a mock of HelloConsole
+    # 2.3 Create a mock of HelloConsole
     console = MagicMock()
-    # // - Mock print method
+    # 2.4 Mock print method
     console.print = MagicMock()
 
-    # 2.3 Create a HelloApp, the one we want to test, passing the mocks
+    # 2.5 Create a HelloApp, the one we want to test, passing the mocks
     app = HelloApp(message, console)
-    # - Execute the method we want to test
+    # 2.6 Execute the method we want to test
     app.print_hello()
 
-    # 2.4 Verify HelloConsole mock print() method
+    # 2.7 Verify HelloConsole mock print() method
     # has been called once with "Hello Test!"
     console.print.assert_called_once_with(message_text)
 ```

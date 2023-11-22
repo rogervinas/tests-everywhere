@@ -86,20 +86,20 @@ class HelloAppTest : DescribeSpec({
 
       // 2.1 Create a mock of HelloMessage
       val message = mockk<HelloMessage>()
-      // - Return "Hello Test!" whenever text is called
+      // 2.2 Return "Hello Test!" whenever text is called
       every { message.text } returns (messageText)
 
-      // 2.2 Create a mock of HelloConsole
+      // 2.3 Create a mock of HelloConsole
       val console = mockk<HelloConsole>()
-      // - Do nothing whenever print is called
+      // 2.4 Do nothing whenever print is called
       every { console.print(any()) } just Runs
 
-      // 2.3 Create a HelloApp, the one we want to test, passing the mocks
+      // 2.5 Create a HelloApp, the one we want to test, passing the mocks
       val app = HelloApp(message, console)
-      // - Execute the method we want to test
+      // 2.6 Execute the method we want to test
       app.printHello()
 
-      // 2.4 Verify HelloConsole mock print() method
+      // 2.7 Verify HelloConsole mock print() method
       // has been called once with "Hello Test!"
       verify { console.print(messageText) }
     }

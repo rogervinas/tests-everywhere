@@ -82,7 +82,7 @@ RSpec.describe HelloApp do
     messageText = "Hello Test!"
 
     # 2.1 Create a mock of HelloMessage
-    # - Return "Hello Test!" whenever text is called
+    # that will return "Hello Test!" whenever text is called
     message = instance_double("HelloMessage", :text => messageText)
 
     # 2.2 Create a mock of HelloConsole
@@ -92,7 +92,7 @@ RSpec.describe HelloApp do
 
     # 2.4 Create a HelloApp, the one we want to test, passing the mocks
     app = HelloApp.new message, console
-    # - Execute the method we want to test
+    # 2.5 Execute the method we want to test
     app.printHello
 
     # Expectation 2.3 will be checked once test ends

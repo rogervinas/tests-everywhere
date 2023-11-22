@@ -90,22 +90,30 @@ setup() {
 }
 ```
 
-4. Test `helloApp` function creating mock functions for `helloMessage` and `helloConsole`:
+4. Test `helloApp` function:
 
 ```shell
 @test "helloApp should print hello message" {
+    # 4.1 Create a helloMessage function mock
+    # - Will return "Hello Test!"
     function helloMessageMock() {
         echo "Hello Test!"
     }
 
+    # 4.2 Create a helloConsole function mock
+    # - Will print parameter passed within "helloConsoleMock[...]"
     function helloConsoleMock() {
         local text=$1
         echo "helloConsoleMock[$text]"
     }
 
+    # 4.3 Load helloApp function, the one we want to test
     source hello-app.bash
+    # 4.4 Execute helloApp passing mock functions
     run helloApp helloMessageMock helloConsoleMock
 
+    # Assert helloConsoleMock has been called once
+    # with the returned message by helloMessageMock
     assert_output "helloConsoleMock[Hello Test!]"
 }
 ```

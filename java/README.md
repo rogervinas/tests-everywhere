@@ -94,7 +94,7 @@ void shouldPrintHelloMessage() {
 
   // 2.1 Create a mock of HelloMessage
   var message = mock(HelloMessage.class);
-  // - Return "Hello Test!" whenever getText() is called
+  // 2.2 Return "Hello Test!" whenever getText() is called
   when(message.getText()).thenReturn(messageText);
 
   // 2.2 Create a mock of HelloConsole
@@ -102,10 +102,10 @@ void shouldPrintHelloMessage() {
 
   // 2.3 Create a HelloApp, the one we want to test, passing the mocks
   var app = new HelloApp(message, console);
-  // - Execute the method we want to test
+  // 2.4 Execute the method we want to test
   app.printHello();
 
-  // 2.4 Verify HelloConsole mock print() method
+  // 2.5 Verify HelloConsole mock print() method
   // has been called once with "Hello Test!"
   verify(console).print(messageText);
 }

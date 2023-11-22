@@ -160,23 +160,23 @@ mod tests {
 
     // 4.3 Create a mock of HelloMessage
     let mut message = MockHelloMessage::new();
-    // - Return "Hello Test!" whenever text is called
+    // 4.4 Return "Hello Test!" whenever text is called
     message.expect_text().return_const(String::from(message_text));
 
-    // 2.2 Create a mock of HelloConsole
+    // 4.5 Create a mock of HelloConsole
     let mut console = MockHelloConsole::new();
-    // 2.3 Expect print to be called once with "Hello Test!"
+    // 4.6 Expect print to be called once with "Hello Test!"
     console.expect_print()
       .with(eq(String::from(message_text)))
       .times(1)
       .return_const(());
 
-    // 2.4 Create a HelloApp, the one we want to test, passing the mocks
+    // 4.7 Create a HelloApp, the one we want to test, passing the mocks
     let app = HelloApp::new(Box::new(message), Box::new(console));
-    // - Execute the method we want to test
+    // 4.8 Execute the method we want to test
     app.print_hello();
 
-    // Expectation 2.3 will be checked once test ends
+    // Expectation 4.6 will be checked once test ends
   }
 }
 ```
