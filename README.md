@@ -3,10 +3,11 @@
 Welcome to the **Hello World!** of **testing** using the most popular programming languages ...
 
 |  [![](.files/java.png)](java)  | [![](.files/kotlin.png)](kotlin) | [![](.files/javascript.png)](javascript) |   [![](.files/ruby.png)](ruby)   |   [![](.files/go.png)](go)   |
-|:------------------------------:|:--------------------------------:|:----------------------------------------:|:--------------------------------:|:----------------------------:|
+| :----------------------------: | :------------------------------: | :--------------------------------------: | :------------------------------: | :--------------------------: |
 | [![](.files/scala.png)](scala) | [![](.files/python.png)](python) |       [![](.files/rust.png)](rust)       | [![](.files/csharp.png)](dotnet) | [![](.files/bash.png)](bash) |
 
 In each of them we will implement this simple logic:
+
 ```mermaid
 %%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
@@ -25,6 +26,7 @@ sequenceDiagram
 ```
 
 And we will test both **HelloMessage** ...
+
 ```mermaid
 %%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
@@ -37,6 +39,7 @@ sequenceDiagram
 ```
 
 ... and **HelloApp**:
+
 ```mermaid
 %%{ init: { "sequence": { "mirrorActors": false } } }%%
 sequenceDiagram
@@ -55,4 +58,4 @@ sequenceDiagram
   Test ->> Test: Verify Hello Console Mock<br>has been called once<br>with "Hello Test!"
 ```
 
-Happy Coding! 💙
+Happy Testing! 💙
