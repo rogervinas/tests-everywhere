@@ -47,7 +47,7 @@ class HelloApp:
     self.console.print(self.message.text)
 ```
 
-4. Create main function in [**main**.py](main/__main__.py) that wraps it all together:
+4. Create main function in [\_\_main__.py](main/__main__.py) that wraps it all together:
 
 ```python
 message = HelloMessage()
