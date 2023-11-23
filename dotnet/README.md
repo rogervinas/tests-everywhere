@@ -156,6 +156,12 @@ Total tests: 2
 - Install [.NET](https://dotnet.microsoft.com/download)
   - Check [.NET CLI](https://learn.microsoft.com/dotnet/core/tools/) executing `dotnet --version`
 
+### Run locally
+
+- Test with `dotnet test -v quiet -l:"console;verbosity=normal"`
+- Run with `dotnet run --project Hello.Main`
+- Build with `dotnet publish -c Release`
+
 ### Create project from scratch
 
 - Execute these commands:
@@ -171,9 +177,3 @@ dotnet add ./Hello.Test package Moq --version 4.20.69
 
 dotnet sln Hello.sln add ./Hello.Main ./Hello.Test
 ```
-
-### Run locally
-
-- Test with `dotnet test -v quiet -l:"console;verbosity=normal"`
-- Run with `dotnet run --project Hello.Main`
-- Build with `dotnet publish -c Release`

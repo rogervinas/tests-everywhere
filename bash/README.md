@@ -5,18 +5,20 @@
 
 [Bash](https://www.gnu.org/software/bash/) testing with [BATS](https://bats-core.readthedocs.io/en/stable/#)
 
+- [Show me the code](#show-me-the-code)
+  - [Implementation](#implementation)
+  - [Test](#test)
+- [Run this project using 🐳 docker](#run-this-project-using--docker)
+- [Run this project locally](#run-this-project-locally)
+
+## BATS git submodules
+
 ⚠️ This project includes **BATS** git submodules so once you clone the repo you will need to init and update them:
 
 ```
 git submodule init
 git submodule update
 ```
-
-- [Show me the code](#show-me-the-code)
-  - [Implementation](#implementation)
-  - [Test](#test)
-- [Run this project using 🐳 docker](#run-this-project-using--docker)
-- [Run this project locally](#run-this-project-locally)
 
 ## Show me the code
 
@@ -143,6 +145,7 @@ Take a look at the other [Libraries and Add-ons](https://bats-core.readthedocs.i
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 
+- Ensure you have updated [BATS git submodules](#bats-git-submodules)
 - Execute `./docker-run.sh`
 - Once inside the container:
   - Test with `./test/bats/bin/bats test/hello.bats`
@@ -154,6 +157,12 @@ Take a look at the other [Libraries and Add-ons](https://bats-core.readthedocs.i
 
 - Ensure you have **bash** installed `bash --version` (this project uses version 5.2)
 
+### Run locally
+
+- Ensure you have updated [BATS git submodules](#bats-git-submodules)
+- Test with `./test/bats/bin/bats test/hello.bats`
+- Run with `./src/hello.bash`
+
 ### Create project from scratch
 
 - Create an empty project with `src` and `test` folders
@@ -164,8 +173,3 @@ git submodule add https://github.com/bats-core/bats-core.git test/bats
 git submodule add https://github.com/bats-core/bats-support.git test/test_helper/bats-support
 git submodule add https://github.com/bats-core/bats-assert.git test/test_helper/bats-assert
 ```
-
-### Run locally
-
-- Test with `./test/bats/bin/bats test/hello.bats`
-- Run with `./src/hello.bash`
