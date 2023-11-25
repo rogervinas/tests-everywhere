@@ -1,3 +1,6 @@
+[![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/swift.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/swift.yml)
+![Swift](https://img.shields.io/badge/Swift-5.9-blue?labelColor=black)
+
 https://www.swift.org/getting-started/cli-swiftpm/
 
 swift package init --name Hello --type executable
