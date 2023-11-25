@@ -29,9 +29,7 @@ jobs:
 
       - name: Configure XCode
         run: |
-          ls -la /Applications/Xcode*
-          xcode-select -p
-          sudo xcode-select -s /Applications/Xcode_15.0.1.app
+          sudo xcode-select -s /Applications/Xcode_15.0.app
           swift --version
 
       - name: Test
