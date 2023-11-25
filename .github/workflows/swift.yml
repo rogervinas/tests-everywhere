@@ -27,6 +27,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Configure Swift
+        uses: SwiftyLab/setup-swift@v1
+        with:
+          swift-version: 5.9
+
       - name: Test
         run: swift test
 
