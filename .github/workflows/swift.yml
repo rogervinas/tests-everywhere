@@ -27,6 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # We can use swift-actions/setup-swift@v1 but this is faster
       - name: Configure XCode
         run: |
           sudo xcode-select -s /Applications/Xcode_15.0.app
