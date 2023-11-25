@@ -27,10 +27,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Configure Swift
-        uses: swift-actions/setup-swift@v1
-        with:
-          swift-version: 5.9
+      - name: Configure XCode
+        run: xcode-select -s /Applications/Xcode_15.0.1.app
+
+      - name: Show Swift version
+        run: swift --version
 
       - name: Test
         run: swift test
