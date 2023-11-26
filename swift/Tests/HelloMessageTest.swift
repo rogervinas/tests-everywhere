@@ -4,7 +4,7 @@ import XCTest
 
 final class HelloMessageTest: XCTestCase {
 
-  func shouldReturnHelloWorld() throws {
+  func testHelloMessageShouldReturnHelloWorld() throws {
     let message = HelloMessage()
     XCTAssertEqual(message.👋, "Hello, World!")
   }
