@@ -46,5 +46,5 @@ jobs:
         cobc src/main/cobol/HELLO-CONSOLE.CBL
         cobc -x src/main/cobol/HELLO.CBL
 
-    -name: Run
+    - name: Run
       run: ./HELLO
