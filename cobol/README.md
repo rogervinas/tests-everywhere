@@ -5,7 +5,7 @@
 
 # COBOL
 
-[COBOL](https://xxx/) testing with [cobol-check](https://github.com/openmainframeproject/cobol-check)
+[COBOL](https://www.tutorialspoint.com/cobol/index.htm) testing with [cobol-check](https://github.com/openmainframeproject/cobol-check)
 
 - [Show me the code](#show-me-the-code)
   - [Implementation](#implementation)
