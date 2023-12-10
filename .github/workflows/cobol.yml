@@ -41,6 +41,14 @@ jobs:
     - name: Test
       run: ./cobolcheck -p HELLO
 
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
+      with:
+        name: Test
+        path: output/testResults.xml
+        reporter: java-junit
+
     - name: Build
       run: |
         cobc src/main/cobol/HELLO-CONSOLE.CBL
