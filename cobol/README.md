@@ -159,5 +159,5 @@ I have no idea how to unit test `HELLO-CONSOLE` program as it seems [cobol-check
 
 ### Create project from scratch
 
-- Get [cobol-check distribution](https://github.com/openmainframeproject/cobol-check/tree/Developer/build/distributions) and unzip it locally
+- Get [cobol-check](https://github.com/openmainframeproject/cobol-check/tree/Developer/build/distributions) and unzip it locally
 - Remove samples and place your own files under `src/main/cobol` and `src/test/cobol`
