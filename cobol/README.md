@@ -71,6 +71,8 @@ HELLO-MESSAGE.
 
 Following [A Brief Example](https://github.com/openmainframeproject/cobol-check/wiki/A-Brief-Example), [Mock a paragraph](https://github.com/openmainframeproject/cobol-check/wiki/Mock-a-paragraph-and-provide-fake-results) and [Mock a CALL statement](https://github.com/openmainframeproject/cobol-check/wiki/Mock-a-CALL-statement-and-provide-fake-results) guides ...
 
+In [HELLO.cut](src/test/cobol/HELLO/HELLO.cut) file:
+
 1. Test `HELLO-MESSAGE` paragraph:
 
 ```cobol
