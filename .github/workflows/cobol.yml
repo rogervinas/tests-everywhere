@@ -45,9 +45,9 @@ jobs:
       uses: dorny/test-reporter@v1
       if: success() || failure()
       with:
-        name: Test
+        name: test
         path: cobol/output/testResults.xml
-        reporter: java-junit
+        reporter: jest-junit
 
     - name: Build
       run: |
