@@ -1,6 +1,7 @@
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/cobol.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/cobol.yml)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-blue?labelColor=black)
 ![GnuCOBOL](https://img.shields.io/badge/GnuCOBOL-3.1.2.0-blue?labelColor=black)
+![Cobol-Check](https://img.shields.io/badge/Cobol-Check-0.2.8-blue?labelColor=black)
 
 # COBOL
 
@@ -16,15 +17,33 @@
 
 ### Implementation
 
-1. Create a program `HELLO` in [HELLO.CBL](src/main/cobol/HELLO.CBL):
+1. Create a program `HELLO-CONSOLE` in [HELLO-CONSOLE.CBL](src/main/cobol/HELLO-CONSOLE.CBL):
 
-- Define an alpha-numeric variable `MSG`
-- `MAIN` paragraph just calling the `HELLO` paragraph
-- `HELLO` paragraph calling:
-  - `HELLO-MESSAGE` paragraph that sets `MSG` value
-  - `HELLO-CONSOLE` program that displays passed `MSG` value
+- Declare an alpha-numeric parameter `MSG`
+- Program will just display `MSG`
 
-We use a [paragraph]() for `HELLO-MESSAGE` and a program for `HELLO-CONSOLE` just to show two different options and how to mock them in the tests.
+```cobol
+IDENTIFICATION DIVISION.
+PROGRAM-ID. HELLO-CONSOLE.
+
+DATA DIVISION.
+LINKAGE SECTION.
+01 MSG PIC A(20).
+
+PROCEDURE DIVISION USING MSG.
+    DISPLAY MSG.
+```
+
+2. Create a program `HELLO` in [HELLO.CBL](src/main/cobol/HELLO.CBL):
+
+- Declare an alpha-numeric variable `MSG`
+- Create `HELLO-MESSAGE` paragraph that sets a value to `MSG` variable
+- Create `HELLO` paragraph calling:
+  - `HELLO-MESSAGE` paragraph
+  - `HELLO-CONSOLE` program
+- Create `MAIN` paragraph just calling the `HELLO` paragraph
+
+💡 We use a [paragraph](https://www.tutorialspoint.com/cobol/cobol_program_structure.htm) for `HELLO-MESSAGE` and a [program](https://www.tutorialspoint.com/cobol/cobol_program_structure.htm) for `HELLO-CONSOLE` just to show two different options and how to mock them in the tests.
 
 ```cobol
 IDENTIFICATION DIVISION.
@@ -48,25 +67,9 @@ HELLO-MESSAGE.
     MOVE 'HELLO WORLD!' TO MSG.
 ```
 
-2. Create a program `HELLO-CONSOLE` in [HELLO-CONSOLE.CBL](src/main/cobol/HELLO-CONSOLE.CBL):
-
-```cobol
-IDENTIFICATION DIVISION.
-PROGRAM-ID. HELLO-CONSOLE.
-
-DATA DIVISION.
-LINKAGE SECTION.
-01 MSG PIC A(20).
-
-PROCEDURE DIVISION USING MSG.
-
-HELLO-CONSOLE.
-    DISPLAY MSG.
-```
-
 ### Test
 
-Following [xxx](https://xxx) and [mock paragraph](https://xxx) guides ...
+Following [A Brief Example](https://github.com/openmainframeproject/cobol-check/wiki/A-Brief-Example), [Mock a paragraph](https://github.com/openmainframeproject/cobol-check/wiki/Mock-a-paragraph-and-provide-fake-results) and [Mock a CALL statement](https://github.com/openmainframeproject/cobol-check/wiki/Mock-a-CALL-statement-and-provide-fake-results) guides ...
 
 1. Test `HELLO-MESSAGE` paragraph:
 
@@ -125,7 +128,7 @@ HELLO
 ================================================
 ```
 
-Note: cobol-check and testing of hello-console ??
+I have no idea how to unit test `HELLO-CONSOLE` program as it seems [cobol-check](https://github.com/openmainframeproject/cobol-check) does not support `PROCEDURE DIVISION USING X` sections 😓
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 
@@ -140,20 +143,21 @@ Note: cobol-check and testing of hello-console ??
 
 ### Pre-requisites
 
-- cobol-check?
-- cobol distributions
-
-https://sourceforge.net/projects/gnucobol/
-https://gnucobol.sourceforge.io/faq/index.html#using-gnucobol
-https://gnucobol.sourceforge.io/faq/index.html#are-there-pre-built-gnucobol-packages
+- **Java 8** required to run **cobol-check 0.2.8**
+- You can try to build [GnuCOBOL](https://sourceforge.net/projects/gnucobol/) from scratch or ...
+- Install any [pre-built GnuCOBOL package](https://gnucobol.sourceforge.io/faq/index.html#are-there-pre-built-gnucobol-packages):
+  - on [Ubuntu](https://ubuntu.com/) `sudo apt-get update && sudo apt-get install -y gnucobol`
+  - on [Fedora](https://fedoraproject.org/) `sudo dnf -y install gnucobol`
+  - ...
 
 ### Run locally
 
-??
-
-- Test with `python -m unittest discover -v`
-- Run with `python -m main`
+- Test with `./cobolcheck -p HELLO`
+- Build `HELLO-CONSOLE.so` with `cobc src/main/cobol/HELLO-CONSOLE.CBL`
+- Build `HELLO` with `cobc -x src/main/cobol/HELLO.CBL`
+- Run with `./HELLO`
 
 ### Create project from scratch
 
-- Just create a cobol file and compile it
+- Get [cobol-check distribution](https://github.com/openmainframeproject/cobol-check/tree/Developer/build/distributions) and unzip it locally
+- Remove samples and place your own files under `src/main/cobol` and `src/test/cobol`
