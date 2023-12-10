@@ -1,7 +1,7 @@
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/cobol.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/cobol.yml)
 ![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-blue?labelColor=black)
 ![GnuCOBOL](https://img.shields.io/badge/GnuCOBOL-3.1.2.0-blue?labelColor=black)
-![Cobol-Check](https://img.shields.io/badge/Cobol-Check-0.2.8-blue?labelColor=black)
+![CobolCheck](https://img.shields.io/badge/CobolCheck-0.2.8-blue?labelColor=black)
 
 # COBOL
 
