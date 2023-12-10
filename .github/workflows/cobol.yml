@@ -34,4 +34,4 @@ jobs:
           distribution: "temurin"
 
       - name: Configure Cobol
-        run: apt-get install -y gnucobol && cobc --version
+        run: sudo apt-get install -y gnucobol && cobc --version
