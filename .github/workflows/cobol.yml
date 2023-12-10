@@ -46,7 +46,7 @@ jobs:
       if: success() || failure()
       with:
         name: Test
-        path: output/testResults.xml
+        path: cobol/output/testResults.xml
         reporter: java-junit
 
     - name: Build
