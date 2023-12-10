@@ -6,5 +6,6 @@
        01 MSG PIC A(20).
 
        PROCEDURE DIVISION USING MSG.
+
        HELLO-CONSOLE.
            DISPLAY MSG.

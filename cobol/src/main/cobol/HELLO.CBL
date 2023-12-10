@@ -17,4 +17,3 @@
 
        HELLO-MESSAGE.
 \           MOVE "HELLO WORLD!" TO MSG.
-
