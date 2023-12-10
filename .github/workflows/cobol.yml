@@ -24,27 +24,27 @@ jobs:
         working-directory: cobol
 
     steps:
-      - name: Checkout
+    - name: Checkout
       uses: actions/checkout@v4
 
-      - name: Configure Java
+    - name: Configure Java
       uses: actions/setup-java@v4
       with:
         java-version: "8"
         distribution: "temurin"
 
-      - name: Configure Cobol
+    - name: Configure Cobol
       run: |
         sudo apt-get install -y gnucobol
         cobc --version
 
-      - name: Test
+    - name: Test
       run: ./cobolcheck -p HELLO
 
-      - name: Build
+    - name: Build
       run: |
         cobc src/main/cobol/HELLO-CONSOLE.CBL
         cobc -x src/main/cobol/HELLO.CBL
 
-      -name: Run
+    -name: Run
       run: ./HELLO
