@@ -1,5 +1,6 @@
 [![CI](https://github.com/rogervinas/tests-everywhere/actions/workflows/cobol.yml/badge.svg)](https://github.com/rogervinas/tests-everywhere/actions/workflows/cobol.yml)
-![GnuCOBOL](https://img.shields.io/badge/GnuCOBOL-3.2.0-blue?labelColor=black)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-24.04-blue?labelColor=black)
+![GnuCOBOL](https://img.shields.io/badge/GnuCOBOL-3.1.2.0-blue?labelColor=black)
 
 # COBOL
 
@@ -76,7 +77,7 @@ TestCase "SHOULD RETURN HELLO WORLD"
   MOVE "" TO MSG
   PERFORM HELLO-MESSAGE
   Expect MSG = "HELLO WORLD!"
-````
+```
 
 2. Test `HELLO` paragraph mocking `HELLO-MESSAGE` and `HELLO-CONSOLE`:
 
