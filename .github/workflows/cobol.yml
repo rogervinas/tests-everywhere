@@ -34,4 +34,17 @@ jobs:
           distribution: "temurin"
 
       - name: Configure Cobol
-        run: sudo apt-get install -y gnucobol && cobc --version
+        run: |
+          sudo apt-get install -y gnucobol
+          cobc --version
+
+      - name: Test
+        run: ./cobolcheck -p HELLO
+
+      - name: Build
+        run: |
+          cobc src/main/cobol/HELLO-CONSOLE.CBL
+          cobc -x src/main/cobol/HELLO.CBL
+
+      -name: Run
+        run: ./HELLO
