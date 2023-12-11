@@ -16,4 +16,4 @@
            CALL 'HELLO-CONSOLE' USING MSG.
 
        HELLO-MESSAGE.
-\           MOVE "HELLO WORLD!" TO MSG.
+           MOVE "HELLO WORLD!" TO MSG.
