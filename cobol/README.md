@@ -130,7 +130,7 @@ HELLO
 ================================================
 ```
 
-I have no idea how to unit test `HELLO-CONSOLE` program as it seems [cobol-check](https://github.com/openmainframeproject/cobol-check) does not support `PROCEDURE DIVISION USING X` sections 😓
+I have no idea how to unit test `HELLO-CONSOLE` program as it seems [cobol-check](https://github.com/openmainframeproject/cobol-check) does not support `PROCEDURE DIVISION USING X` sections, I have created [this issue](https://github.com/openmainframeproject/cobol-check/issues/339) 🤞
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 
