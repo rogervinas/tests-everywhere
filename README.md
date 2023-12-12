@@ -12,7 +12,8 @@ Welcome to the **Hello World!** of **testing** using the most popular programmin
 [![](.files/kotlin.png)](kotlin)
 [![](.files/ruby.png)](ruby)
 [![](.files/rust.png)](rust)
-[![](.files/scala.png)](scala)  
+[![](.files/scala.png)](scala)
+[![](.files/swift.png)](swift)
 
 In each of them we will implement this simple logic:
 
