@@ -6,9 +6,10 @@ import XCTest
 final class HelloAppTest: XCTestCase {
 
   func testHelloAppShouldDisplayHelloMessage() throws {
+    let messageText = "Hello Test!"
     let message = MockHelloMessage()
     stub(message) { stub in
-      when(stub.👋.get).thenReturn("Hello Test!")
+      when(stub.👋.get).thenReturn(messageText)
     }
 
     let console = MockHelloConsole()
@@ -19,6 +20,6 @@ final class HelloAppTest: XCTestCase {
     let app = HelloApp(message: message, console: console)
     app.printHello()
 
-    verify(console).print(👋: "Hello Test!")
+    verify(console).print(👋: messageText)
   }
 }
