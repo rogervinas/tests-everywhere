@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Sources/HelloConsole.swift at 2023-12-12 14:06:31 +0000
+// MARK: - Mocks generated from file: Sources/HelloConsole.swift at 2023-12-12 14:57:15 +0000
 
 
 import Cuckoo
@@ -124,7 +124,7 @@ import Cuckoo
 
 
 
-// MARK: - Mocks generated from file: Sources/HelloMessage.swift at 2023-12-12 14:06:31 +0000
+// MARK: - Mocks generated from file: Sources/HelloMessage.swift at 2023-12-12 14:57:15 +0000
 
 
 import Cuckoo
@@ -154,6 +154,22 @@ import Cuckoo
     
 
     
+    
+    
+    
+     override var 👋: String {
+        get {
+            return cuckoo_manager.getter("👋",
+                superclassCall:
+                    
+                                    super.👋
+                    ,
+                defaultCall:  __defaultImplStub!.👋)
+        }
+        
+    }
+    
+    
 
     
 
@@ -165,6 +181,13 @@ import Cuckoo
          init(manager: Cuckoo.MockManager) {
             self.cuckoo_manager = manager
         }
+        
+        
+        
+        var 👋: Cuckoo.ClassToBeStubbedReadOnlyProperty<MockHelloMessage, String> {
+            return .init(manager: cuckoo_manager, name: "👋")
+        }
+        
         
         
     }
@@ -181,6 +204,13 @@ import Cuckoo
         }
     
         
+        
+        
+        var 👋: Cuckoo.VerifyReadOnlyProperty<String> {
+            return .init(manager: cuckoo_manager, name: "👋", callMatcher: callMatcher, sourceLocation: sourceLocation)
+        }
+        
+        
     
         
     }
@@ -188,6 +218,17 @@ import Cuckoo
 
 
  class HelloMessageStub: HelloMessage {
+    
+    
+    
+    
+     override var 👋: String {
+        get {
+            return DefaultValueRegistry.defaultValue(for: (String).self)
+        }
+        
+    }
+    
     
 
     
