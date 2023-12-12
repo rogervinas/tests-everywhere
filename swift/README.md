@@ -17,7 +17,7 @@
 
 Sorry but reading that [constant and variable names can contain almost any character, including Unicode characters](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/thebasics#Naming-Constants-and-Variables) I could not resist 😅 ...
 
-### 1. Create `HelloMessage` class in [HelloMessage.swift](Sources/HelloMessage.swift):
+#### 1. Create `HelloMessage` class in [HelloMessage.swift](Sources/HelloMessage.swift):
 
 ```swift
 class HelloMessage {
@@ -29,7 +29,7 @@ class HelloMessage {
 }
 ```
 
-### 2. Same way create `HelloConsole` class in [HelloConsole.swift](Sources/HelloConsole.swift):
+#### 2. Same way create `HelloConsole` class in [HelloConsole.swift](Sources/HelloConsole.swift):
 
 ```swift
 class HelloConsole {
@@ -39,7 +39,7 @@ class HelloConsole {
 }
 ```
 
-### 3. Create `HelloApp` class in [HelloApp.swift](Sources/HelloApp.swift):
+#### 3. Create `HelloApp` class in [HelloApp.swift](Sources/HelloApp.swift):
 
 ```swift
 class HelloApp {
@@ -58,7 +58,7 @@ class HelloApp {
 }
 ```
 
-### 4. Create main class in [Main.swift](Sources/Main.swift) that wraps it all together:
+#### 4. Create main class in [Main.swift](Sources/Main.swift) that wraps it all together:
 
 ```swift
 @main
@@ -76,7 +76,7 @@ public struct Main {
 
 Following [XCTest](https://developer.apple.com/documentation/xctest) and [Cuckoo](https://github.com/Brightify/Cuckoo) guides ...
 
-### 1. Mock generation
+#### 1. Mock generation
 
 Mocks have to be generated statically, you can follow [these instructions](https://github.com/Brightify/Cuckoo/tree/master#swift-package-manager) or alternatively:
 
@@ -97,7 +97,7 @@ git clone git@github.com:Brightify/Cuckoo.git /tmp/Cuckoo
 
 You can also integrate mocks generation in the build, before compile phase.
 
-### 2. Test `HelloMessage` in [HelloMessageTest.swift](Tests/HelloMessageTest.swift):
+#### 2. Test `HelloMessage` in [HelloMessageTest.swift](Tests/HelloMessageTest.swift):
 
 ```swift
 final class HelloMessageTest: XCTestCase {
@@ -108,7 +108,7 @@ final class HelloMessageTest: XCTestCase {
 }
 ```
 
-### 3. Test `HelloApp` in [HelloAppTest.swift](Tests/HelloAppTest.swift):
+#### 3. Test `HelloApp` in [HelloAppTest.swift](Tests/HelloAppTest.swift):
 
 ```swift
 final class HelloAppTest: XCTestCase {
@@ -140,7 +140,7 @@ final class HelloAppTest: XCTestCase {
 }
 ```
 
-### 4. Test output should look like:
+#### 4. Test output should look like:
 
 ```
 Test Suite 'All tests' started at 2023-12-12 16:48:21.225
