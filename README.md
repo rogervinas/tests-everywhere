@@ -2,10 +2,7 @@
 
 Welcome to the **Hello World!** of **testing** using the most popular programming languages ...
 
-|  [![](.files/java.png)](java)  | [![](.files/kotlin.png)](kotlin) | [![](.files/javascript.png)](javascript) |   [![](.files/ruby.png)](ruby)   |   [![](.files/go.png)](go)   |
-| :----------------------------: | :------------------------------: | :--------------------------------------: | :------------------------------: | :--------------------------: |
-| [![](.files/scala.png)](scala) | [![](.files/python.png)](python) |       [![](.files/rust.png)](rust)       | [![](.files/csharp.png)](dotnet) | [![](.files/bash.png)](bash) |
-| [![](.files/cobol.png)](cobol) |                                  |                                          |                                  |                              |
+[![](.files/java.png)](java) [![](.files/kotlin.png)](kotlin) [![](.files/javascript.png)](javascript) [![](.files/ruby.png)](ruby) [![](.files/go.png)](go) [![](.files/scala.png)](scala) [![](.files/python.png)](python) [![](.files/rust.png)](rust) [![](.files/csharp.png)](dotnet) [![](.files/bash.png)](bash) [![](.files/cobol.png)](cobol)
 
 In each of them we will implement this simple logic:
 
