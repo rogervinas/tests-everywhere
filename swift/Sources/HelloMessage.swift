@@ -1,3 +1,7 @@
 class HelloMessage {
-  let 👋 = "Hello World!"
+  var 👋: String {
+    get {
+      return "Hello World!"
+    }
+  }
 }

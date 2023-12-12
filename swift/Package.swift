@@ -16,7 +16,8 @@ let package = Package(
     .testTarget(
       name: "HelloTests",
       dependencies: [
-        "Hello"
+        "Hello",
+        "Cuckoo",
       ]
     ),
   ]
