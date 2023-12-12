@@ -175,7 +175,7 @@ Test Suite 'All tests' passed at 2023-12-12 16:48:21.232
 ### Pre-requisites
 
 - Install [Swift](https://www.swift.org/install/)
-- If you need to build Cuckoo mock generator, install [XCode command line tools](https://developer.apple.com/xcode/resources/)
+- If you need to build [Cuckoo](https://github.com/Brightify/Cuckoo) mock generator, install [XCode command line tools](https://developer.apple.com/xcode/resources/)
 
 ### Run locally
 
