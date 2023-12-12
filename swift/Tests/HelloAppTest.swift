@@ -7,16 +7,18 @@ final class HelloAppTest: XCTestCase {
 
   func testHelloAppShouldDisplayHelloMessage() throws {
     let message = MockHelloMessage()
-    message.
     stub(message) { stub in
       when(stub.👋.get).thenReturn("Hello Test!")
     }
 
     let console = MockHelloConsole()
     stub(console) { stub in
-      when(stub.print(👋: "Hello Test!")).thenDoNothing()
+      when(stub.print(👋: anyString())).thenDoNothing()
     }
 
-    XCTAssertEqual(message.👋, "Hello, World!")
+    let app = HelloApp(message: message, console: console)
+    app.printHello()
+
+    verify(console).print(👋: "Hello Test!")
   }
 }
