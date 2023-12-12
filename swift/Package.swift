@@ -6,7 +6,6 @@ import PackageDescription
 let package = Package(
   name: "Hello",
   dependencies: [
-    .package(url: "https://github.com/apple/swift-testing.git", revision: "0.1.0"),
     .package(url: "https://github.com/Brightify/Cuckoo.git", revision: "1.10.3"),
   ],
   targets: [

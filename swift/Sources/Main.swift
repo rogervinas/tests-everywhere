@@ -1,5 +1,5 @@
 @main
-public struct Hello {
+public struct Main {
   public static func main() {
     let message = HelloMessage()
     let console = HelloConsole()
