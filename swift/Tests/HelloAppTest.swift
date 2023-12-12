@@ -4,7 +4,6 @@ import XCTest
 @testable import Hello
 
 final class HelloAppTest: XCTestCase {
-
   func testHelloAppShouldDisplayHelloMessage() throws {
     let messageText = "Hello Test!"
     let message = MockHelloMessage()

@@ -74,105 +74,119 @@ public struct Main {
 
 ### Test
 
-Following [JUnit5 > Writing Tests](https://junit.org/junit5/docs/current/user-guide/#writing-tests), [Mockito > Stubbing](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#stubbing) and [AssertJ > Core assertions guide](https://assertj.github.io/doc/#assertj-core-assertions-guide) guides ...
+Following [XCTest](https://developer.apple.com/documentation/xctest) and [Cuckoo](https://github.com/Brightify/Cuckoo) guides ...
 
-1. Test `HelloMessage` in [HelloMessageTest.java](src/test/java/org/hello/HelloMessageTest.java):
+1. Mock generation
 
-```java
-@Test
-void shouldReturnHelloWorld() {
-  var message = new HelloMessage();
-  assertThat(message.getText()).isEqualTo("Hello World!");
+Mocks have to be generated statically, you can follow [these instructions](https://github.com/Brightify/Cuckoo/tree/master#swift-package-manager) or alternatively:
+
+- Build generator (only once, [XCode command line tools](https://developer.apple.com/xcode/resources/) required):
+```shell
+git clone git@github.com:Brightify/Cuckoo.git /tmp/Cuckoo
+/tmp/Cuckoo/build_generator
+```
+
+- Generate mocks (as many times as needed):
+```shell
+/tmp/Cuckoo/Generator/bin/cuckoo_generator generate \
+  --testable Hello \
+  --output Tests/Mocks.swift \
+  Sources/HelloMessage.swift \
+  Sources/HelloConsole.swift
+```
+
+You can also integrate mocks generation in the build, before compile phase.
+
+2. Test `HelloMessage` in [HelloMessageTest.swift](Tests/HelloMessageTest.swift):
+
+```swift
+final class HelloMessageTest: XCTestCase {
+  func testHelloMessageShouldReturnHelloWorld() throws {
+    let message = HelloMessage()
+    XCTAssertEqual(message.👋, "Hello World!")
+  }
 }
 ```
 
-2. Test `HelloApp` in [HelloAppTest.java](src/test/java/org/hello/HelloAppTest.java):
+3. Test `HelloApp` in [HelloAppTest.swift](Tests/HelloAppTest.swift):
 
-```java
-@Test
-void shouldPrintHelloMessage() {
+```swift
+final class HelloAppTest: XCTestCase {
+  func testHelloAppShouldDisplayHelloMessage() throws {
+    let messageText = "Hello Test!"
+    // 2.1 Create a mock of HelloMessage
+    let message = MockHelloMessage()
+    // 2.2 Return "Hello Test!" whenever 👋 getter is called
+    stub(message) { stub in
+      when(stub.👋.get).thenReturn(messageText)
+    }
 
-  var messageText = "Hello Test!";
+    // 2.2 Create a mock of HelloConsole
+    let console = MockHelloConsole()
+    // 2.3 Do nothing whenever print is called
+    stub(console) { stub in
+      when(stub.print(👋: anyString())).thenDoNothing()
+    }
 
-  // 2.1 Create a mock of HelloMessage
-  var message = mock(HelloMessage.class);
-  // 2.2 Return "Hello Test!" whenever getText() is called
-  when(message.getText()).thenReturn(messageText);
+    // 2.4 Create a HelloApp, the one we want to test, passing the mocks
+    let app = HelloApp(message: message, console: console)
+    // 2.5 Execute the method we want to test
+    app.printHello()
 
-  // 2.2 Create a mock of HelloConsole
-  var console = mock(HelloConsole.class);
-
-  // 2.3 Create a HelloApp, the one we want to test, passing the mocks
-  var app = new HelloApp(message, console);
-  // 2.4 Execute the method we want to test
-  app.printHello();
-
-  // 2.5 Verify HelloConsole mock print() method
-  // has been called once with "Hello Test!"
-  verify(console).print(messageText);
+    // 2.6 Verify HelloConsole mock print() method
+    // has been called once with "Hello Test!"
+    verify(console).print(👋: messageText)
+  }
 }
 ```
 
-3. Test output should look like:
+4. Test output should look like:
 
 ```
-> Task :test
-
-HelloAppTest > shouldPrintHelloMessage() PASSED
-
-HelloMessageTest > shouldReturnHelloWorld() PASSED
-
-BUILD SUCCESSFUL in 2s
+Test Suite 'All tests' started at 2023-12-12 16:48:21.225
+Test Suite 'debug.xctest' started at 2023-12-12 16:48:21.227
+Test Suite 'HelloAppTest' started at 2023-12-12 16:48:21.227
+Test Case 'HelloAppTest.testHelloAppShouldDisplayHelloMessage' started at 2023-12-12 16:48:21.227
+Test Case 'HelloAppTest.testHelloAppShouldDisplayHelloMessage' passed (0.003 seconds)
+Test Suite 'HelloAppTest' passed at 2023-12-12 16:48:21.230
+    Executed 1 test, with 0 failures (0 unexpected) in 0.003 (0.003) seconds
+Test Suite 'HelloMessageTest' started at 2023-12-12 16:48:21.230
+Test Case 'HelloMessageTest.testHelloMessageShouldReturnHelloWorld' started at 2023-12-12 16:48:21.231
+Test Case 'HelloMessageTest.testHelloMessageShouldReturnHelloWorld' passed (0.001 seconds)
+Test Suite 'HelloMessageTest' passed at 2023-12-12 16:48:21.232
+    Executed 1 test, with 0 failures (0 unexpected) in 0.001 (0.001) seconds
+Test Suite 'debug.xctest' passed at 2023-12-12 16:48:21.232
+    Executed 2 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
+Test Suite 'All tests' passed at 2023-12-12 16:48:21.232
+    Executed 2 tests, with 0 failures (0 unexpected) in 0.004 (0.004) seconds
 ```
 
 ## Run this project using 🐳 [docker](https://www.docker.com/)
 
 - Execute `./docker-run.sh`
 - Once inside the container:
-  - Test with `./gradlew test --rerun-tasks`
-  - Run with `./gradlew run`
+  - Test with `swift test`
+  - Run with `swift run`
+  - Build with `swift build -c release`
+  - Run executable with `$(swift build --show-bin-path -c release)/Hello`
 
 ## Run this project locally
 
 ### Pre-requisites
 
-- Install [Java](https://openjdk.org/) and [Gradle](https://gradle.org/) manually or ...
-  - Install [SdkMan](https://sdkman.io/) and ...
-    - List available versions executing `sdk list java` and `sdk list gradle`
-    - Install **Java** executing `sdk install java 21-tem`
-    - Install **Gradle** executing `sdk install grade 8.4`
+- Install [Swift](https://www.swift.org/install/)
+- If you need to build Cuckoo mock generator, install [XCode command line tools](https://developer.apple.com/xcode/resources/)
 
 ### Run locally
 
-- Test with `./gradlew test --rerun-tasks`
-- Run with `./gradlew run`
+- Test with `swift test`
+- Run with `swift run`
+- Build with `swift build -c release`
+- Run executable with `$(swift build --show-bin-path -c release)/Hello`
 
 ### Create project from scratch
 
-- Create project using `gradle init --type java-application --dsl kotlin --test-framework junit-jupiter`
-- Add [Mockito](https://site.mockito.org/) and [AssertJ](https://assertj.github.io/doc/) dependencies in [build.gradle.kts](build.gradle.kts):
-  ```kotlin
-  dependencies {
-    testImplementation("org.mockito:mockito-core:x.x.x")
-    testImplementation("org.assertj:assertj-core:x.x.x")
-  }
-  ```
-
-
-
-
-https://www.swift.org/getting-started/cli-swiftpm/
-
-swift package init --name Hello --type executable
-
-https://github.com/apple/swift-testing
-https://swiftpackageindex.com/apple/swift-testing/main/documentation/testing/temporarygettingstarted
-https://swiftpackageindex.com/apple/swift-testing/main/documentation/testing
-
-https://www.swift.org/packages/testing.html
-
-./.tmp/Cuckoo/Generator/bin/cuckoo_generator generate --testable Hello --output Tests/Mocks.swift Sources/HelloMessage.swift Sources/HelloConsole.swift
-
-
-swift build -c release
-$(swift build --show-bin-path -c release)/Hello
+- Create project using `swift package init --name Hello --type executable`
+- Customize [Package.swift](Package.swift):
+    - Add `Cuckoo` package as a dependency
+    - Add `HelloTests` testTarget with `Hello` and `Cuckoo` dependencies

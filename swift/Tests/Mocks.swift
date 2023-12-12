@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Sources/HelloConsole.swift at 2023-12-12 14:57:15 +0000
+// MARK: - Mocks generated from file: Sources/HelloConsole.swift at 2023-12-12 16:40:03 +0000
 
 
 import Cuckoo
@@ -124,7 +124,7 @@ import Cuckoo
 
 
 
-// MARK: - Mocks generated from file: Sources/HelloMessage.swift at 2023-12-12 14:57:15 +0000
+// MARK: - Mocks generated from file: Sources/HelloMessage.swift at 2023-12-12 16:40:03 +0000
 
 
 import Cuckoo
