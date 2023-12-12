@@ -10,3 +10,5 @@ https://swiftpackageindex.com/apple/swift-testing/main/documentation/testing/tem
 https://swiftpackageindex.com/apple/swift-testing/main/documentation/testing
 
 https://www.swift.org/packages/testing.html
+
+./.tmp/Cuckoo/Generator/bin/cuckoo_generator generate --testable Hello --output Tests/Mocks.swift Sources/HelloMessage.swift Sources/HelloConsole.swift
