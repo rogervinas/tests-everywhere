@@ -40,6 +40,6 @@ jobs:
 
       # Optional: This step uploads information to the GitHub dependency graph and unblocking Dependabot alerts for the repository
     - name: Upload Dependency Graph
-      uses: scalacenter/sbt-dependency-submission@6807cf91e9dc7af7c314b988d56d928d5828605b
+      uses: scalacenter/sbt-dependency-submission@845d240d249307bc506cb9cbe273ecadec350d07
       with:
         working-directory: scala
