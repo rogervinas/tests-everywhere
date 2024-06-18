@@ -39,7 +39,9 @@ jobs:
         cobc --version
 
     - name: Test
-      run: ./cobolcheck -p HELLO
+      run: |
+        ./cobolcheck -p HELLO
+        ./cobolcheck -p HELLO-CONSOLE
 
     - name: Test Report
       uses: dorny/test-reporter@v1
