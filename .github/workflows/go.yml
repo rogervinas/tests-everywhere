@@ -2,12 +2,12 @@ name: Go
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
     paths:
       - .github/workflows/go.yml
       - go/**
   pull_request:
-    branches: [ main ] 
+    branches: [ main ]
     paths:
       - .github/workflows/go.yml
       - go/**

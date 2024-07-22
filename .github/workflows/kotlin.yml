@@ -2,12 +2,12 @@ name: Kotlin
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
     paths:
       - .github/workflows/kotlin.yml
       - kotlin/**
   pull_request:
-    branches: [ main ] 
+    branches: [ main ]
     paths:
       - .github/workflows/kotlin.yml
       - kotlin/**

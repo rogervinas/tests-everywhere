@@ -2,12 +2,12 @@ name: JavaScript
 
 on:
   push:
-    branches: [ main ] 
+    branches: [ main ]
     paths:
       - .github/workflows/javascript.yml
       - javascript/**
   pull_request:
-    branches: [ main ] 
+    branches: [ main ]
     paths:
       - .github/workflows/javascript.yml
       - javascript/**
