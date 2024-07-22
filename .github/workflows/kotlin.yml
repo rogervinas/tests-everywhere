@@ -41,7 +41,7 @@ jobs:
           ${{ runner.os }}-kotlin        
 
     - name: Build
-      uses: gradle/gradle-build-action@66535aaf56f831b35e3a8481c9c99b665b84dd45
+      uses: gradle/actions/setup-gradle@v3
       with:
         arguments: build
         build-root-directory: kotlin
