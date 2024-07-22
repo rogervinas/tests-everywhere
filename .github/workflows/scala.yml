@@ -25,21 +25,21 @@ jobs:
         working-directory: scala
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Set up Java
-      uses: actions/setup-java@v4
-      with:
-        java-version: 21
-        distribution: temurin
-        cache: sbt
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: 21
+          distribution: temurin
+          cache: sbt
 
-    - name: Test
-      run: sbt test
+      - name: Test
+        run: sbt test
 
-      # Optional: This step uploads information to the GitHub dependency graph and unblocking Dependabot alerts for the repository
-    - name: Upload Dependency Graph
-      uses: scalacenter/sbt-dependency-submission@7ebd561e5280336d3d5b445a59013810ff79325e
-      with:
-        working-directory: scala
+        # Optional: This step uploads information to the GitHub dependency graph and unblocking Dependabot alerts for the repository
+      - name: Upload Dependency Graph
+        uses: scalacenter/sbt-dependency-submission@7ebd561e5280336d3d5b445a59013810ff79325e
+        with:
+          working-directory: scala

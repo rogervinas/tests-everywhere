@@ -2,12 +2,12 @@ name: Cobol
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
     paths:
       - .github/workflows/cobol.yml
       - cobol/**
   pull_request:
-    branches: ["main"]
+    branches: [ "main" ]
     paths:
       - .github/workflows/cobol.yml
       - cobol/**
@@ -24,35 +24,35 @@ jobs:
         working-directory: cobol
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Configure Java
-      uses: actions/setup-java@v4
-      with:
-        java-version: "8"
-        distribution: "temurin"
+      - name: Configure Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: "8"
+          distribution: "temurin"
 
-    - name: Configure Cobol
-      run: |
-        sudo apt-get install -y gnucobol
-        cobc --version
+      - name: Configure Cobol
+        run: |
+          sudo apt-get install -y gnucobol
+          cobc --version
 
-    - name: Test
-      run: ./cobolcheck -p HELLO
+      - name: Test
+        run: ./cobolcheck -p HELLO
 
-    - name: Test Report
-      uses: dorny/test-reporter@v1
-      if: success() || failure()
-      with:
-        name: test
-        path: cobol/output/testResults.xml
-        reporter: jest-junit
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: test
+          path: cobol/output/testResults.xml
+          reporter: jest-junit
 
-    - name: Build
-      run: |
-        cobc src/main/cobol/HELLO-CONSOLE.CBL
-        cobc -x src/main/cobol/HELLO.CBL
+      - name: Build
+        run: |
+          cobc src/main/cobol/HELLO-CONSOLE.CBL
+          cobc -x src/main/cobol/HELLO.CBL
 
-    - name: Run
-      run: ./HELLO
+      - name: Run
+        run: ./HELLO
