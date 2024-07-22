@@ -2,12 +2,12 @@ name: Cobol
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
     paths:
       - .github/workflows/cobol.yml
       - cobol/**
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
     paths:
       - .github/workflows/cobol.yml
       - cobol/**
