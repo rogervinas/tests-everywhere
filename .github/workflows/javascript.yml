@@ -25,18 +25,18 @@ jobs:
         working-directory: javascript
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Configure Node
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18.x'
-        cache: 'npm'
-        cache-dependency-path: javascript/package-lock.json
+      - name: Configure Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+          cache-dependency-path: javascript/package-lock.json
 
-    - name: Install
-      run: npm install
+      - name: Install
+        run: npm install
 
-    - name: Test
-      run: npm test
+      - name: Test
+        run: npm test

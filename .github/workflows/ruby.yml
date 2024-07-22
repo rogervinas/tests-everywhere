@@ -25,15 +25,15 @@ jobs:
         working-directory: ruby
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Configure Ruby
-      uses: ruby/setup-ruby@161cd54b698f1fb3ea539faab2e036d409550e3c
-      with:
-        ruby-version: '3'
-        bundler-cache: true
-        working-directory: ruby
+      - name: Configure Ruby
+        uses: ruby/setup-ruby@161cd54b698f1fb3ea539faab2e036d409550e3c
+        with:
+          ruby-version: '3'
+          bundler-cache: true
+          working-directory: ruby
 
-    - name: Test
-      run: bundle exec rspec -fd
+      - name: Test
+        run: bundle exec rspec -fd

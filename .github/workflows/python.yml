@@ -25,13 +25,13 @@ jobs:
         working-directory: python
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-    - name: Configure Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.12'
+      - name: Configure Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-    - name: Test
-      run: python -m unittest discover -v
+      - name: Test
+        run: python -m unittest discover -v

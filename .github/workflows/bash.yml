@@ -25,13 +25,13 @@ jobs:
         working-directory: bash
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        submodules: true
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: true
 
-    - name: Test
-      run: ./test/bats/bin/bats test/hello.bats
+      - name: Test
+        run: ./test/bats/bin/bats test/hello.bats
 
-    - name: Run
-      run: ./src/hello.bash
+      - name: Run
+        run: ./src/hello.bash
