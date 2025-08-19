@@ -25,7 +25,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # We can use swift-actions/setup-swift@v1 but this is faster
       - name: Configure Swift
