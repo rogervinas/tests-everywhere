@@ -35,11 +35,8 @@ jobs:
           distribution: temurin
           cache: sbt
 
-      - name: Test
-        run: sbt test
+      - name: Set up sbt
+        uses: sbt/setup-sbt@v1
 
-        # Optional: This step uploads information to the GitHub dependency graph and unblocking Dependabot alerts for the repository
-      - name: Upload Dependency Graph
-        uses: scalacenter/sbt-dependency-submission@64084844d2b0a9b6c3765f33acde2fbe3f5ae7d3
-        with:
-          working-directory: scala
+      - name: Test
+        run: sbt -batch test
