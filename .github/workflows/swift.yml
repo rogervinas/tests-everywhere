@@ -30,7 +30,9 @@ jobs:
       # We can use swift-actions/setup-swift@v1 but this is faster
       - name: Configure Swift
         run: |
-          sudo xcode-select -s /Applications/Xcode_15.0.app
+          XCODE_PATH=$(ls -d /Applications/Xcode_*.app | sort -V | tail -n 1)
+          echo "Xcode $XCODE_PATH"
+          sudo xcode-select -s "$XCODE_PATH"
           swift --version
 
       - name: Test
